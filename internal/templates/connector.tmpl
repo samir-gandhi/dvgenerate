@@ -1,0 +1,42 @@
+
+{{ define "allconnections" }}
+## DaVinci Connection Definitions
+
+Below is a list of all available DaVinci Connections available for use in `davinci_connection` resource. 
+If the `value` type of a property is not defined it must be inferred.
+
+
+  {{ range $value := . }}
+    {{- template "connection" $value -}}
+  {{ end }}
+{{ end }}
+
+{{ define "connection" }}
+### {{ .Name }}
+
+**Connector Display Name**: {{ .Name }}
+
+**Connector ID** - schema `connectorId`: {{ .ConnectorID }}
+
+**Properties Table:** 
+{{ template "properties" . }}
+
+{{ end }}
+
+{{ define "properties" }}
+{{ $props := .Properties }}
+{{ $acv := .AccountConfigView }}
+| Display Name | `name` | `value` Type | Description |
+| ---- | ---- | ---- | ----|
+{{- if $acv }}
+  {{- range $key, $pVal := $props }}
+    {{- range $acvVal := $acv.Items }}
+    {{- if eq $key $acvVal.PropertyName }}
+| {{ $pVal.DisplayName }} | `{{ $key }}` | `{{ $pVal.Type }}` | {{ $pVal.Info }} |
+    {{- end}}
+    {{- end }}
+  {{- end }} 
+{{ end }}
+{{ end }}
+
+{{ template "allconnections" . }}
