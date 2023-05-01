@@ -1,4 +1,4 @@
-module github.com/samir-gandhi/generation-dv-connection-docs
+module github.com/samir-gandhi/dvgenerate
 
 go 1.19
 

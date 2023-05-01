@@ -1,6 +1,6 @@
-package generator
+//go:generate go run ./cmd/generate
 
-//go:generate generator
+package dvgenerate
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 	"text/template"
 )
 
-func main() {
+func Generate() {
 
 	// nameReg := regexp.MustCompile(`name=([A-Za-z0-9_]+),`)
 	t, err := template.ParseFiles("internal/templates/connector.tmpl")
