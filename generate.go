@@ -1,4 +1,4 @@
-//go:generate go run ./cmd/generate
+//go:generate go run ./cmd/generate.go
 
 package dvgenerate
 
