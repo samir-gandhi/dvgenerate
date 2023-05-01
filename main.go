@@ -1,6 +1,6 @@
 package main
 
-//go:generate go run .
+//go:generate generator
 
 import (
 	"fmt"
