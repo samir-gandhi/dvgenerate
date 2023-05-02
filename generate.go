@@ -1,11 +1,13 @@
-//go:generate go run ./cmd/generate.go
+//go:generate go run ./cmd/generate/generate.go
 
 package dvgenerate
 
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"sort"
+	"strings"
 
 	dv "github.com/samir-gandhi/davinci-client-go/davinci"
 
@@ -15,8 +17,18 @@ import (
 
 func Generate() {
 
+	dir, err := filepath.Abs(filepath.Dir("."))
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("dir:", dir)
+	myDir := "./"
+	if !strings.Contains(dir, "samir-gandhi/dvgenerate") {
+		myDir = "../vendor/github.com/samir-gandhi/dvgenerate/"
+	}
+
 	// nameReg := regexp.MustCompile(`name=([A-Za-z0-9_]+),`)
-	t, err := template.ParseFiles("internal/templates/connector.tmpl")
+	t, err := template.ParseFiles(myDir + "internal/templates/connector.tmpl")
 	if err != nil {
 		panic(err)
 	}
