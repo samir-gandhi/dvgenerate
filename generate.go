@@ -22,20 +22,25 @@ func Generate() {
 		panic(err)
 	}
 	fmt.Println("dir:", dir)
-	myDir := "./"
+	var file *os.File
+	packageDir := "./"
+	currentDir := "./"
+	fileName := currentDir + "docs/resources/connection.md"
+
 	if !strings.Contains(dir, "samir-gandhi/dvgenerate") {
-		myDir = "../vendor/github.com/samir-gandhi/dvgenerate/"
+		file, err = os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+		if err != nil {
+			panic(err)
+		}
+		packageDir = "./vendor/github.com/samir-gandhi/dvgenerate/"
+	} else {
+		file, err = os.Create(fileName)
+		if err != nil {
+			panic(err)
+		}
 	}
 
-	// nameReg := regexp.MustCompile(`name=([A-Za-z0-9_]+),`)
-	t, err := template.ParseFiles(myDir + "internal/templates/connector.tmpl")
-	if err != nil {
-		panic(err)
-	}
-
-	fileName := t.Name() + "_generated.md"
-	// fileName := strings.ToLower(t.Name()) + "_generated.md"
-	file, err := os.Create(fmt.Sprintf("generated/%s", fileName))
+	t, err := template.ParseFiles(packageDir + "cmd/generate/connector.tmpl")
 	if err != nil {
 		panic(err)
 	}
@@ -49,11 +54,6 @@ func Generate() {
 	if err != nil {
 		panic(err)
 	}
-
-	// t.Execute(file, map[string]string{
-	// 	"title": "Initial Doc",
-	// 	"name":  "John Doe",
-	// })
 }
 
 func readConnectors() ([]dv.Connector, error) {
