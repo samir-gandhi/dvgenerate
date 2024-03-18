@@ -53,9 +53,9 @@ Connector ID (`connector_id` in the resource): `connectorAWSLambda`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `accessKeyId` (*Type inferred from the provided value*): Access key to connect to AWS Environment. Console display name: "Access Key Id".
+* `accessKeyId` (string; *Type inferred from the provided string value*): Access key to connect to AWS Environment. Console display name: "Access Key Id".
 * `region` (string): AWS Region where the Lambda function is created. Console display name: "AWS Region".
-* `secretAccessKey` (*Type inferred from the provided value*): Secret Key to access the AWS. Console display name: "AWS Secret Key".
+* `secretAccessKey` (string; *Type inferred from the provided string value*): Secret Key to access the AWS. Console display name: "AWS Secret Key".
 
 
 Example:
@@ -115,9 +115,9 @@ Connector ID (`connector_id` in the resource): `connectorAmazonAwsSecretsManager
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `accessKeyId` (*Type inferred from the provided value*): The AWS Access Key. Console display name: "AWS Access Key".
+* `accessKeyId` (string; *Type inferred from the provided string value*): The AWS Access Key. Console display name: "AWS Access Key".
 * `region` (string): The AWS Region. Console display name: "AWS Region".
-* `secretAccessKey` (*Type inferred from the provided value*): The AWS Access Secret. Console display name: "AWS Access Secret".
+* `secretAccessKey` (string; *Type inferred from the provided string value*): The AWS Access Secret. Console display name: "AWS Access Secret".
 
 
 Example:
@@ -204,7 +204,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `clientId` (string): Your Adobe Marketo client ID. Console display name: "Client ID".
 * `clientSecret` (string): Your Adobe Marketo client secret. Console display name: "Client Secret".
-* `endpoint` (*Type inferred from the provided value*): The API endpoint for your Adobe Marketo instance, such as "abc123.mktorest.com/rest". Console display name: "API URL".
+* `endpoint` (string; *Type inferred from the provided string value*): The API endpoint for your Adobe Marketo instance, such as "abc123.mktorest.com/rest". Console display name: "API URL".
 
 
 Example:
@@ -304,7 +304,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `awsAccessKey` (string):  Console display name: "AWS Access Key".
 * `awsAccessSecret` (string):  Console display name: "AWS Access Secret".
 * `awsRegion` (string):  Console display name: "AWS Region".
-* `from` (*Type inferred from the provided value*): The email address that the message appears to originate from, as registered with your AWS account, such as "support@mycompany.com". Console display name: "From (Default) *".
+* `from` (string; *Type inferred from the provided string value*): The email address that the message appears to originate from, as registered with your AWS account, such as "support@mycompany.com". Console display name: "From (Default) *".
 
 
 Example:
@@ -390,8 +390,8 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `apiUrl` (string):  Console display name: "API Server URL".
 * `clientId` (string):  Console display name: "Client ID".
 * `clientSecret` (string):  Console display name: "Client Secret".
-* `javascriptWebUrl` (*Type inferred from the provided value*): Argyle loader javascript web URL. Console display name: "Argyle Loader Javascript Web URL".
-* `pluginKey` (*Type inferred from the provided value*):  Console display name: "Plugin Key".
+* `javascriptWebUrl` (string; *Type inferred from the provided string value*): Argyle loader javascript web URL. Console display name: "Argyle Loader Javascript Web URL".
+* `pluginKey` (string; *Type inferred from the provided string value*):  Console display name: "Plugin Key".
 
 
 Example:
@@ -490,10 +490,10 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `androidSDKLicenseKey` (string): License key is whitelisted for specific package name. Console display name: "Android SDK Licence Key".
 * `apiUrl` (string): AuthenticID REST API URL for sandbox/production environments. Console display name: "REST API URL".
 * `baseUrl` (string): AuthenticID API URL for sandbox/production environments. Console display name: "Base URL".
-* `clientCertificate` (*Type inferred from the provided value*): Your Client Certificate provided by AuthenticID. Console display name: "Client Certificate".
-* `clientKey` (*Type inferred from the provided value*): Your Client Key provided by AuthenticID. Console display name: "Client Key".
+* `clientCertificate` (string; *Type inferred from the provided string value*): Your Client Certificate provided by AuthenticID. Console display name: "Client Certificate".
+* `clientKey` (string; *Type inferred from the provided string value*): Your Client Key provided by AuthenticID. Console display name: "Client Key".
 * `iOSSDKLicenseKey` (string): License key is whitelisted for specific bundle id. Console display name: "iOS SDK Licence Key".
-* `passphrase` (*Type inferred from the provided value*): Your Certificate Passphrase provided by AuthenticID. Console display name: "Certificate Passphrase".
+* `passphrase` (string; *Type inferred from the provided string value*): Your Certificate Passphrase provided by AuthenticID. Console display name: "Certificate Passphrase".
 * `secretToken` (string): Your Secret Token provided by AuthenticID. Console display name: "Secret Token".
 
 
@@ -585,7 +585,7 @@ Connector ID (`connector_id` in the resource): `azureUserManagementConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `baseUrl` (string): The Microsoft API URL to target. For a custom value, select Use Custom API URL and enter a value in the Custom API URL field. Console display name: "API URL".
-* `customApiUrl` (*Type inferred from the provided value*): The URL for the Microsoft Graph API, such as "https://graph.microsoft.com/v1.0". Console display name: "Custom API URL".
+* `customApiUrl` (string; *Type inferred from the provided string value*): The URL for the Microsoft Graph API, such as "https://graph.microsoft.com/v1.0". Console display name: "Custom API URL".
 * `customAuth` (array):  Console display name: "Custom Parameters".
 
 
@@ -701,8 +701,8 @@ Connector ID (`connector_id` in the resource): `connectorBerbix`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `domainName` (*Type inferred from the provided value*): Provide Berbix domain name. Console display name: "Domain Name".
-* `path` (*Type inferred from the provided value*): Provide path of the API. Console display name: "Path".
+* `domainName` (string; *Type inferred from the provided string value*): Provide Berbix domain name. Console display name: "Domain Name".
+* `path` (string; *Type inferred from the provided string value*): Provide path of the API. Console display name: "Path".
 * `username` (string): Provide your Berbix user name. Console display name: "User Name".
 
 
@@ -764,7 +764,7 @@ Connector ID (`connector_id` in the resource): `connectorBTps`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiKey` (string): API Key from your Password Safe environment. Console display name: "API Key".
-* `apiUser` (*Type inferred from the provided value*): API User from your Password Safe environment. Console display name: "API User".
+* `apiUser` (string; *Type inferred from the provided string value*): API User from your Password Safe environment. Console display name: "API User".
 * `domain` (string): Domain of your Password Safe environment. Console display name: "PasswordSafe Hostname".
 
 
@@ -800,9 +800,9 @@ Connector ID (`connector_id` in the resource): `connectorBTpra`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `clientID` (*Type inferred from the provided value*): PRA API Client ID. Console display name: "Client ID".
+* `clientID` (string; *Type inferred from the provided string value*): PRA API Client ID. Console display name: "Client ID".
 * `clientSecret` (string): PRA API Client Secret. Console display name: "Client Secret".
-* `praAPIurl` (*Type inferred from the provided value*): URL of PRA Appliance. Console display name: "PRA Web API Address".
+* `praAPIurl` (string; *Type inferred from the provided string value*): URL of PRA Appliance. Console display name: "PRA Web API Address".
 
 
 Example:
@@ -837,9 +837,9 @@ Connector ID (`connector_id` in the resource): `connectorBTrs`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `clientID` (*Type inferred from the provided value*): RS API Client ID. Console display name: "Client ID".
+* `clientID` (string; *Type inferred from the provided string value*): RS API Client ID. Console display name: "Client ID".
 * `clientSecret` (string): RS API Client Secret. Console display name: "Client Secret".
-* `rsAPIurl` (*Type inferred from the provided value*): URL of RS Appliance. Console display name: "RS Web API Address".
+* `rsAPIurl` (string; *Type inferred from the provided string value*): URL of RS Appliance. Console display name: "RS Web API Address".
 
 
 Example:
@@ -954,7 +954,7 @@ Connector ID (`connector_id` in the resource): `castleConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `apiSecret` (*Type inferred from the provided value*): Your 32-character Castle API secret, such as “Olc…QBF”. Console display name: "API Secret".
+* `apiSecret` (string; *Type inferred from the provided string value*): Your 32-character Castle API secret, such as “Olc…QBF”. Console display name: "API Secret".
 
 
 Example:
@@ -997,12 +997,12 @@ Connector ID (`connector_id` in the resource): `connectorCircleAccess`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `appKey` (*Type inferred from the provided value*): App Key. Console display name: "App Key".
+* `appKey` (string; *Type inferred from the provided string value*): App Key. Console display name: "App Key".
 * `customAuth` (array):  Console display name: "Custom Parameters".
-* `loginUrl` (*Type inferred from the provided value*): The URL of your Circle Access login. Console display name: "Login Url".
-* `readKey` (*Type inferred from the provided value*): Read Key. Console display name: "Read Key".
+* `loginUrl` (string; *Type inferred from the provided string value*): The URL of your Circle Access login. Console display name: "Login Url".
+* `readKey` (string; *Type inferred from the provided string value*): Read Key. Console display name: "Read Key".
 * `returnToUrl` (string): When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application. Console display name: "Application Return To URL".
-* `writeKey` (*Type inferred from the provided value*): Write key. Console display name: "Write Key".
+* `writeKey` (string; *Type inferred from the provided string value*): Write key. Console display name: "Write Key".
 
 
 Example:
@@ -1053,7 +1053,7 @@ Connector ID (`connector_id` in the resource): `connectorClearbit`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiKey` (string): Clearbit API Key. Console display name: "API Key".
-* `riskApiVersion` (*Type inferred from the provided value*): Clearbit - Risk API Version. Console display name: "Risk API Version".
+* `riskApiVersion` (string; *Type inferred from the provided string value*): Clearbit - Risk API Version. Console display name: "Risk API Version".
 * `version` (string): Clearbit - Person API Version. Console display name: "Person API Version".
 
 
@@ -1089,8 +1089,8 @@ Connector ID (`connector_id` in the resource): `connectorCloudflare`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `accountId` (*Type inferred from the provided value*): Cloudflare Account ID. Console display name: "Account ID".
-* `apiToken` (*Type inferred from the provided value*): Cloudflare API Token. Console display name: "API Token".
+* `accountId` (string; *Type inferred from the provided string value*): Cloudflare Account ID. Console display name: "Account ID".
+* `apiToken` (string; *Type inferred from the provided string value*): Cloudflare API Token. Console display name: "API Token".
 
 
 Example:
@@ -1275,7 +1275,7 @@ Connector ID (`connector_id` in the resource): `crowdStrikeConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `baseURL` (*Type inferred from the provided value*): The base URL of the CrowdStrike environment. Console display name: "CrowdStrike Base URL".
+* `baseURL` (string; *Type inferred from the provided string value*): The base URL of the CrowdStrike environment. Console display name: "CrowdStrike Base URL".
 * `clientId` (string): The Client ID of the application in CrowdStrike. Console display name: "Client ID".
 * `clientSecret` (string): The Client Secret provided by CrowdStrike. Console display name: "Client Secret".
 
@@ -1405,9 +1405,9 @@ Connector ID (`connector_id` in the resource): `connector-oai-datadogapi`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `authApiKey` (*Type inferred from the provided value*): The API key for an account that has access to the Datadog API. Console display name: "Authentication API Key".
-* `authApplicationKey` (*Type inferred from the provided value*): The Application key for an account that has access to the Datadog API. Console display name: "Authentication Application Key".
-* `basePath` (*Type inferred from the provided value*): The base URL for contacting the Datadog API, such as "https://api.us3.datadoghq.com". Console display name: "API URL".
+* `authApiKey` (string; *Type inferred from the provided string value*): The API key for an account that has access to the Datadog API. Console display name: "Authentication API Key".
+* `authApplicationKey` (string; *Type inferred from the provided string value*): The Application key for an account that has access to the Datadog API. Console display name: "Authentication Application Key".
+* `basePath` (string; *Type inferred from the provided string value*): The base URL for contacting the Datadog API, such as "https://api.us3.datadoghq.com". Console display name: "API URL".
 
 
 Example:
@@ -1561,7 +1561,7 @@ Connector ID (`connector_id` in the resource): `entrustConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `applicationId` (string): The application ID for the Identity as a Service application. Console display name: "Application ID".
-* `serviceDomain` (*Type inferred from the provided value*): The domain of the Entrust service. Format is '<customer>.<region>.trustedauth.com'. For example, 'mycompany.us.trustedauth.com'. Console display name: "Service Domain".
+* `serviceDomain` (string; *Type inferred from the provided string value*): The domain of the Entrust service. Format is '<customer>.<region>.trustedauth.com'. For example, 'mycompany.us.trustedauth.com'. Console display name: "Service Domain".
 
 
 Example:
@@ -1595,7 +1595,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `clientId` (string): When you Create a New App, Equifax will assign a Client ID per environment for the API Product. Console display name: "Client ID".
 * `clientSecret` (string): When you Create a New App, Equifax will assign a Client Secret per environment for the API Product. Console display name: "Client Secret".
 * `equifaxSoapApiEnvironment` (string): SOAP API WSDL Environment. Console display name: "SOAP API Environment".
-* `memberNumber` (*Type inferred from the provided value*): Unique Identifier of Customer. Please contact Equifax Sales Representative during client onboarding for this value. Console display name: "Member Number".
+* `memberNumber` (string; *Type inferred from the provided string value*): Unique Identifier of Customer. Please contact Equifax Sales Representative during client onboarding for this value. Console display name: "Member Number".
 * `password` (string): Password provided by Equifax for SOAP API. Console display name: "Password for SOAP API".
 * `username` (string): Username provided by Equifax for SOAP API. Console display name: "Username for SOAP API".
 
@@ -1695,7 +1695,7 @@ Connector ID (`connector_id` in the resource): `fingerprintjsConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `apiToken` (*Type inferred from the provided value*):  Console display name: "Fingerprint Subscription API Token".
+* `apiToken` (string; *Type inferred from the provided string value*):  Console display name: "Fingerprint Subscription API Token".
 * `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
 * `token` (string):  Console display name: "Fingerprint Subscription Browser Token".
 
@@ -1732,10 +1732,10 @@ Connector ID (`connector_id` in the resource): `finicityConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `appKey` (*Type inferred from the provided value*): Finicity App Key from Finicity Developer Portal. Console display name: "Finicity App Key".
+* `appKey` (string; *Type inferred from the provided string value*): Finicity App Key from Finicity Developer Portal. Console display name: "Finicity App Key".
 * `baseUrl` (string): Base URL for Finicity API. Console display name: "Base URL".
-* `partnerId` (*Type inferred from the provided value*): The partner id you can obtain from your Finicity developer dashboard. Console display name: "Partner ID".
-* `partnerSecret` (*Type inferred from the provided value*): Partner Secret from Finicity Developer Portal. Console display name: "Partner Secret".
+* `partnerId` (string; *Type inferred from the provided string value*): The partner id you can obtain from your Finicity developer dashboard. Console display name: "Partner ID".
+* `partnerSecret` (string; *Type inferred from the provided string value*): Partner Secret from Finicity Developer Portal. Console display name: "Partner Secret".
 
 
 Example:
@@ -1831,7 +1831,7 @@ Connector ID (`connector_id` in the resource): `connectorFreshdesk`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiKey` (string): Make sure that the "APIkey:X" is Base64-encoded before pasting into the text field. Console display name: "Freshdesk API Key".
-* `baseURL` (*Type inferred from the provided value*): The <tenant>.freshdesk.com URL or custom domain. Console display name: "Freshdesk Base URL (or Domain)".
+* `baseURL` (string; *Type inferred from the provided string value*): The <tenant>.freshdesk.com URL or custom domain. Console display name: "Freshdesk Base URL (or Domain)".
 * `version` (string): The current Freshdesk API Version. Console display name: "Freshdesk API Version".
 
 
@@ -1984,7 +1984,7 @@ Connector ID (`connector_id` in the resource): `connectorGoogleanalyticsUA`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `trackingID` (*Type inferred from the provided value*): The tracking ID / web property ID. The format is UA-XXXX-Y. All collected data is associated by this ID. Console display name: "Tracking ID".
+* `trackingID` (string; *Type inferred from the provided string value*): The tracking ID / web property ID. The format is UA-XXXX-Y. All collected data is associated by this ID. Console display name: "Tracking ID".
 * `version` (string): The Protocol version. The current value is '1'. This will only change when there are changes made that are not backwards compatible. Console display name: "Version".
 
 
@@ -2066,7 +2066,7 @@ Connector ID (`connector_id` in the resource): `googleWorkSpaceAdminConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `iss` (string): The email address associated with the Google Workspace service, such as "google-workspace-admin@xenon-set-123456.iam.gserviceaccount.com". Console display name: "Service Account Email Address".
-* `privateKey` (*Type inferred from the provided value*): The private key associated with the public key that you added to the Google Workspace service. Console display name: "Private Key".
+* `privateKey` (string; *Type inferred from the provided string value*): The private key associated with the public key that you added to the Google Workspace service. Console display name: "Private Key".
 * `sub` (string): The administrator's email address. Console display name: "Admin Email Address".
 
 
@@ -2139,8 +2139,8 @@ Connector ID (`connector_id` in the resource): `humanCompromisedConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `appId` (*Type inferred from the provided value*): App ID from your HUMAN Tenant. Console display name: "HUMAN App ID".
-* `authToken` (*Type inferred from the provided value*): Auth Token from your HUMAN Tenant. Console display name: "HUMAN Auth Token".
+* `appId` (string; *Type inferred from the provided string value*): App ID from your HUMAN Tenant. Console display name: "HUMAN App ID".
+* `authToken` (string; *Type inferred from the provided string value*): Auth Token from your HUMAN Tenant. Console display name: "HUMAN Auth Token".
 
 
 Example:
@@ -2170,9 +2170,9 @@ Connector ID (`connector_id` in the resource): `connectorHuman`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `humanAuthenticationToken` (*Type inferred from the provided value*): Bearer Token from HUMAN. Console display name: "HUMAN Authentication Token".
-* `humanCustomerID` (*Type inferred from the provided value*): Customer ID from HUMAN. Console display name: "HUMAN Customer ID".
-* `humanPolicyName` (*Type inferred from the provided value*): HUMAN mitigation policy name. Console display name: "HUMAN Policy Name".
+* `humanAuthenticationToken` (string; *Type inferred from the provided string value*): Bearer Token from HUMAN. Console display name: "HUMAN Authentication Token".
+* `humanCustomerID` (string; *Type inferred from the provided string value*): Customer ID from HUMAN. Console display name: "HUMAN Customer ID".
+* `humanPolicyName` (string; *Type inferred from the provided string value*): HUMAN mitigation policy name. Console display name: "HUMAN Policy Name".
 
 
 Example:
@@ -2259,7 +2259,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `apiKey` (string):  Console display name: "Have I Been Pwned API Key".
 * `apiUrl` (string):  Console display name: "API Server URL".
-* `userAgent` (*Type inferred from the provided value*):  
+* `userAgent` (string; *Type inferred from the provided string value*):  
 
 
 Example:
@@ -2319,7 +2319,7 @@ Connector ID (`connector_id` in the resource): `connectorHubspot`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `bearerToken` (*Type inferred from the provided value*): Your unique API key. Console display name: "API Key".
+* `bearerToken` (string; *Type inferred from the provided string value*): Your unique API key. Console display name: "API Key".
 
 
 Example:
@@ -2450,7 +2450,7 @@ Connector ID (`connector_id` in the resource): `idemiaConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `apikey` (*Type inferred from the provided value*):  Console display name: "API Key".
+* `apikey` (string; *Type inferred from the provided string value*):  Console display name: "API Key".
 * `baseUrl` (string): Base Url for IDEMIA API. Can be found in the dashboard documents. Console display name: "IDEMIA API base URL".
 
 
@@ -2750,9 +2750,9 @@ Connector ID (`connector_id` in the resource): `connectorJamf`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `jamfPassword` (*Type inferred from the provided value*): Enter Password for token. Console display name: "JAMF Password".
-* `jamfUsername` (*Type inferred from the provided value*): Enter Username for token. Console display name: "JAMF Username".
-* `serverName` (*Type inferred from the provided value*): Enter Server Name for Base URL. Console display name: "Server Name".
+* `jamfPassword` (string; *Type inferred from the provided string value*): Enter Password for token. Console display name: "JAMF Password".
+* `jamfUsername` (string; *Type inferred from the provided string value*): Enter Username for token. Console display name: "JAMF Username".
+* `serverName` (string; *Type inferred from the provided string value*): Enter Server Name for Base URL. Console display name: "Server Name".
 
 
 Example:
@@ -2824,11 +2824,11 @@ Connector ID (`connector_id` in the resource): `connectorJiraServiceDesk`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `JIRAServiceDeskAuth` (*Type inferred from the provided value*): Bearer Authorization Token for JIRA Service Desk. Console display name: "Bearer Authorization Token for JIRA Service Desk".
-* `JIRAServiceDeskCreateData` (*Type inferred from the provided value*): Raw JSON body to create new JIRA service desk request. Example: {   "requestParticipants": ["qm:a713c8ea-1075-4e30-9d96-891a7d181739:5ad6d69abfa3980ce712caae"   ],   "serviceDeskId": "10",   "requestTypeId": "25",   "requestFieldValues": {     "summary": "Request JSD help via REST",     "description": "I need a new *mouse* for my Mac"   } }. Console display name: "Raw JSON for creating new JIRA service desk request".
-* `JIRAServiceDeskURL` (*Type inferred from the provided value*): URL for JIRA Service Desk. Example: your-domain.atlassian.net. Console display name: "JIRA Service Desk URL".
-* `JIRAServiceDeskUpdateData` (*Type inferred from the provided value*): Raw JSON body to update JIRA service desk request. Example: {"id": "1","additionalComment": {"body": "I have fixed the problem."}}. Console display name: "Raw JSON for updating JIRA service desk".
-* `method` (*Type inferred from the provided value*): The HTTP Method. Console display name: "Method".
+* `JIRAServiceDeskAuth` (string; *Type inferred from the provided string value*): Bearer Authorization Token for JIRA Service Desk. Console display name: "Bearer Authorization Token for JIRA Service Desk".
+* `JIRAServiceDeskCreateData` (string; *Type inferred from the provided string value*): Raw JSON body to create new JIRA service desk request. Example: {   "requestParticipants": ["qm:a713c8ea-1075-4e30-9d96-891a7d181739:5ad6d69abfa3980ce712caae"   ],   "serviceDeskId": "10",   "requestTypeId": "25",   "requestFieldValues": {     "summary": "Request JSD help via REST",     "description": "I need a new *mouse* for my Mac"   } }. Console display name: "Raw JSON for creating new JIRA service desk request".
+* `JIRAServiceDeskURL` (string; *Type inferred from the provided string value*): URL for JIRA Service Desk. Example: your-domain.atlassian.net. Console display name: "JIRA Service Desk URL".
+* `JIRAServiceDeskUpdateData` (string; *Type inferred from the provided string value*): Raw JSON body to update JIRA service desk request. Example: {"id": "1","additionalComment": {"body": "I have fixed the problem."}}. Console display name: "Raw JSON for updating JIRA service desk".
+* `method` (string; *Type inferred from the provided string value*): The HTTP Method. Console display name: "Method".
 
 
 Example:
@@ -2879,7 +2879,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `authorizationTokenLifetime` (number): default: 1800 (30 minutes). maximum: 5184000 (60 days). Console display name: "Time Transaction URL Valid (seconds)".
 * `baseColor` (string): Must be passed with bgColor. Console display name: "HEX Main Color".
 * `bgColor` (string): Must be passed with baseColor. Console display name: "HEX Background Color.".
-* `callbackUrl` (*Type inferred from the provided value*):  Console display name: "Callback URL".
+* `callbackUrl` (string; *Type inferred from the provided string value*):  Console display name: "Callback URL".
 * `clientSecret` (string):  Console display name: "API Secret".
 * `connectorName` (string):  Console display name: "Connector Name".
 * `description` (string):  Console display name: "Description".
@@ -3258,7 +3258,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `clientId` (string): The Client ID of your PingOne Worker application. Console display name: "Client ID".
 * `clientSecret` (string): The Client Secret of your PingOne Worker application. Console display name: "Client Secret".
 * `envId` (string): Your PingOne environment ID. Console display name: "Environment ID".
-* `gatewayId` (*Type inferred from the provided value*): Your PingOne LDAP gateway ID. Console display name: "Gateway ID".
+* `gatewayId` (string; *Type inferred from the provided string value*): Your PingOne LDAP gateway ID. Console display name: "Gateway ID".
 * `region` (string): The region in which your PingOne environment exists. Console display name: "Region".
 
 
@@ -3304,29 +3304,29 @@ Connector ID (`connector_id` in the resource): `lexisNexisConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `acasEndpoint` (*Type inferred from the provided value*): ACAS Endpoint. Console display name: "ACAS Endpoint".
-* `accountId` (*Type inferred from the provided value*): Account ID provided by LexisNexis. Console display name: "Account ID".
-* `acuantCameraScript` (*Type inferred from the provided value*): The URL for the Acuant camera script, such as "https://myhost.com/AcuantCamera.min.js". Console display name: "Camera Script".
-* `acuantConfigurationScript` (*Type inferred from the provided value*): The URL for the Acuant configuration script, such as "https://myhost.com/configuration.js.". Console display name: "Configuration Script".
-* `acuantJavascriptWebSdkScript` (*Type inferred from the provided value*): Tooltip: The URL for the Acuant JavaScript Web SDK, such as "https://myhost.com/AcuantJavascriptWebSdk.min.js". Console display name: "Javascript Web SDK Script".
-* `acuantJavascriptWebSdkScriptSource` (*Type inferred from the provided value*): Select the version of the Acuant scripts that you want to use, or use your own copy of the scripts by selecting Use External Acuant Script URLs. Console display name: "Acuant JavaScript Web SDK Script Source".
-* `acuantPassiveLivenessScript` (*Type inferred from the provided value*): The URL for the Acuant passive liveness script, such as "https://myhost.com/AcuantPassiveLiveness.min.js". Console display name: "Passive Liveness Script".
+* `acasEndpoint` (string; *Type inferred from the provided string value*): ACAS Endpoint. Console display name: "ACAS Endpoint".
+* `accountId` (string; *Type inferred from the provided string value*): Account ID provided by LexisNexis. Console display name: "Account ID".
+* `acuantCameraScript` (string; *Type inferred from the provided string value*): The URL for the Acuant camera script, such as "https://myhost.com/AcuantCamera.min.js". Console display name: "Camera Script".
+* `acuantConfigurationScript` (string; *Type inferred from the provided string value*): The URL for the Acuant configuration script, such as "https://myhost.com/configuration.js.". Console display name: "Configuration Script".
+* `acuantJavascriptWebSdkScript` (string; *Type inferred from the provided string value*): Tooltip: The URL for the Acuant JavaScript Web SDK, such as "https://myhost.com/AcuantJavascriptWebSdk.min.js". Console display name: "Javascript Web SDK Script".
+* `acuantJavascriptWebSdkScriptSource` (string; *Type inferred from the provided string value*): Select the version of the Acuant scripts that you want to use, or use your own copy of the scripts by selecting Use External Acuant Script URLs. Console display name: "Acuant JavaScript Web SDK Script Source".
+* `acuantPassiveLivenessScript` (string; *Type inferred from the provided string value*): The URL for the Acuant passive liveness script, such as "https://myhost.com/AcuantPassiveLiveness.min.js". Console display name: "Passive Liveness Script".
 * `apiKey` (string): API Key provided by LexisNexis. Console display name: "API Key".
-* `apiKey2` (*Type inferred from the provided value*): API Key provided by LexisNexis. Console display name: "API Key".
+* `apiKey2` (string; *Type inferred from the provided string value*): API Key provided by LexisNexis. Console display name: "API Key".
 * `apiUrl` (string): The Base URL for Phone Finder, ID Verification and ThreatMetrix Capability for LexisNexis. Console display name: "API Base URL".
-* `apiUrl2` (*Type inferred from the provided value*): The Base URL for OTP Verification, KBA and Document Verification for LexisNexis API. Console display name: "API Base URL".
-* `apiUrl3` (*Type inferred from the provided value*): The Base URL for Emailage using LexisNexis. Console display name: "API Base URL".
-* `apiUrl4` (*Type inferred from the provided value*): The Base URL for Emailage using LexisNexis. Remember to add the / in the end. Console display name: "API Base URL".
+* `apiUrl2` (string; *Type inferred from the provided string value*): The Base URL for OTP Verification, KBA and Document Verification for LexisNexis API. Console display name: "API Base URL".
+* `apiUrl3` (string; *Type inferred from the provided string value*): The Base URL for Emailage using LexisNexis. Console display name: "API Base URL".
+* `apiUrl4` (string; *Type inferred from the provided string value*): The Base URL for Emailage using LexisNexis. Remember to add the / in the end. Console display name: "API Base URL".
 * `clientId` (string): Account SID for Emailage provided by LexisNexis. Console display name: "Client ID".
 * `clientSecret` (string): OAuth Secret for Emailage provided by LexisNexis. Console display name: "Client Secret".
-* `externalAcuantScriptURLsLabel` (*Type inferred from the provided value*): Provide the location of externally-hosted Acuant scripts. Note: The connector supports version 11.5.0 and later. Console display name: "External Acuant Script URLs".
+* `externalAcuantScriptURLsLabel` (string; *Type inferred from the provided string value*): Provide the location of externally-hosted Acuant scripts. Note: The connector supports version 11.5.0 and later. Console display name: "External Acuant Script URLs".
 * `javascriptCdnUrl` (string): This script is used for ThreatMetrix Profiling. Console display name: "Javascript CDN URL".
-* `openCvScript` (*Type inferred from the provided value*): The URL for the Acuant Open CV script, such as "https://myhost.com/opencv.min.js". Console display name: "Open CV Script".
-* `orgId` (*Type inferred from the provided value*): Organization ID provided by LexisNexis. Console display name: "Organization ID".
-* `orgId2` (*Type inferred from the provided value*): Organization ID provided by LexisNexis. Console display name: "Organization ID".
+* `openCvScript` (string; *Type inferred from the provided string value*): The URL for the Acuant Open CV script, such as "https://myhost.com/opencv.min.js". Console display name: "Open CV Script".
+* `orgId` (string; *Type inferred from the provided string value*): Organization ID provided by LexisNexis. Console display name: "Organization ID".
+* `orgId2` (string; *Type inferred from the provided string value*): Organization ID provided by LexisNexis. Console display name: "Organization ID".
 * `password` (string): Account Password provided by LexisNexis for OTP, KBA or Document Verification. Console display name: "Password".
-* `trueIdPassword` (*Type inferred from the provided value*): Account Password provided by LexisNexis for True ID. Console display name: "Password".
-* `trueIdUsername` (*Type inferred from the provided value*): Account Username provided by LexisNexis for True ID. Console display name: "Username".
+* `trueIdPassword` (string; *Type inferred from the provided string value*): Account Password provided by LexisNexis for True ID. Console display name: "Password".
+* `trueIdUsername` (string; *Type inferred from the provided string value*): Account Username provided by LexisNexis for True ID. Console display name: "Username".
 * `username` (string): Account Username provided by LexisNexis for OTP, KBA or Document Verification. Console display name: "Username".
 
 
@@ -3528,8 +3528,8 @@ Connector ID (`connector_id` in the resource): `connectorMailchimp`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `transactionalApiKey` (*Type inferred from the provided value*): The Transactional API Key is used to send data to the transactional API. Console display name: "Transactional API Key".
-* `transactionalApiVersion` (*Type inferred from the provided value*): Mailchimp - Transactional API Version. Console display name: "Transactional API Version".
+* `transactionalApiKey` (string; *Type inferred from the provided string value*): The Transactional API Key is used to send data to the transactional API. Console display name: "Transactional API Key".
+* `transactionalApiVersion` (string; *Type inferred from the provided string value*): Mailchimp - Transactional API Version. Console display name: "Transactional API Version".
 
 
 Example:
@@ -3560,8 +3560,8 @@ Connector ID (`connector_id` in the resource): `connectorMailgun`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiKey` (string): Mailgun API Key. Console display name: "API Key".
-* `apiVersion` (*Type inferred from the provided value*): Mailgun API Version. Console display name: "API Version".
-* `mailgunDomain` (*Type inferred from the provided value*): Name of the desired domain (e.g. mail.mycompany.com). Console display name: "Domain".
+* `apiVersion` (string; *Type inferred from the provided string value*): Mailgun API Version. Console display name: "API Version".
+* `mailgunDomain` (string; *Type inferred from the provided string value*): Name of the desired domain (e.g. mail.mycompany.com). Console display name: "Domain".
 
 
 Example:
@@ -3623,10 +3623,10 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `clientId` (string): Client ID. Console display name: "Client ID".
 * `clientSecret` (string): Client Secret. Console display name: "Client Secret".
-* `domainName` (*Type inferred from the provided value*): Domain Name. Console display name: "Domain Name".
+* `domainName` (string; *Type inferred from the provided string value*): Domain Name. Console display name: "Domain Name".
 * `grantType` (string): Grant Type. Console display name: "Grant Type".
 * `scope` (string): Scope. Console display name: "Scope".
-* `tenant` (*Type inferred from the provided value*): Tenant. Console display name: "Tenant".
+* `tenant` (string; *Type inferred from the provided string value*): Tenant. Console display name: "Tenant".
 
 
 Example:
@@ -3745,18 +3745,18 @@ Connector ID (`connector_id` in the resource): `nuanceConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `authDescription` (string):  Console display name: "Authentication Description".
-* `configSetName` (*Type inferred from the provided value*): The Config Set Name for accessing Nuance API. Console display name: "Config Set Name".
+* `configSetName` (string; *Type inferred from the provided string value*): The Config Set Name for accessing Nuance API. Console display name: "Config Set Name".
 * `connectorName` (string):  Console display name: "Connector Name".
 * `description` (string):  Console display name: "Description".
 * `details1` (string):  Console display name: "Credentials Details 1".
 * `details2` (string):  Console display name: "Credentials Details 2".
 * `iconUrl` (string):  Console display name: "Icon URL".
 * `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
-* `passphrase1` (*Type inferred from the provided value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase One".
-* `passphrase2` (*Type inferred from the provided value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Two".
-* `passphrase3` (*Type inferred from the provided value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Three".
-* `passphrase4` (*Type inferred from the provided value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Four".
-* `passphrase5` (*Type inferred from the provided value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Five".
+* `passphrase1` (string; *Type inferred from the provided string value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase One".
+* `passphrase2` (string; *Type inferred from the provided string value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Two".
+* `passphrase3` (string; *Type inferred from the provided string value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Three".
+* `passphrase4` (string; *Type inferred from the provided string value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Four".
+* `passphrase5` (string; *Type inferred from the provided string value*): Passphrase that the user will need to speak for voice sample. Console display name: "Passphrase Five".
 * `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
 * `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
 * `title` (string):  Console display name: "Title".
@@ -3890,10 +3890,10 @@ Connector ID (`connector_id` in the resource): `connectorOpswat`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `clientID` (*Type inferred from the provided value*): Oauth client key for authenticating API calls with MetaAccess. Console display name: "Oauth Client Key".
+* `clientID` (string; *Type inferred from the provided string value*): Oauth client key for authenticating API calls with MetaAccess. Console display name: "Oauth Client Key".
 * `clientSecret` (string): Oauth client secret for authenticating API calls with MetaAccess. Console display name: "Oauth Client Secret".
-* `crossDomainApiPort` (*Type inferred from the provided value*): MetaAccess Cross-Domain API integration port. Console display name: "Cross-Domain API Port".
-* `maDomain` (*Type inferred from the provided value*): MetaAccess domain for your environment. Console display name: "MetaAccess Domain".
+* `crossDomainApiPort` (string; *Type inferred from the provided string value*): MetaAccess Cross-Domain API integration port. Console display name: "Cross-Domain API Port".
+* `maDomain` (string; *Type inferred from the provided string value*): MetaAccess domain for your environment. Console display name: "MetaAccess Domain".
 
 
 Example:
@@ -4151,9 +4151,9 @@ Connector ID (`connector_id` in the resource): `connectorPaloAltoPrisma`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `baseURL` (*Type inferred from the provided value*): Prisma Base URL. Console display name: "Prisma Base URL".
-* `prismaPassword` (*Type inferred from the provided value*): Secret Key. Console display name: "Prisma - Secret Key".
-* `prismaUsername` (*Type inferred from the provided value*): Access Key. Console display name: "Prisma - Access Key".
+* `baseURL` (string; *Type inferred from the provided string value*): Prisma Base URL. Console display name: "Prisma Base URL".
+* `prismaPassword` (string; *Type inferred from the provided string value*): Secret Key. Console display name: "Prisma - Secret Key".
+* `prismaUsername` (string; *Type inferred from the provided string value*): Access Key. Console display name: "Prisma - Access Key".
 
 
 Example:
@@ -4188,10 +4188,10 @@ Connector ID (`connector_id` in the resource): `connector-oai-pingaccessadminist
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `authPassword` (*Type inferred from the provided value*): The password for an account that has access to the PingAccess administrative API. Console display name: "Authenticating Password".
-* `authUsername` (*Type inferred from the provided value*): The username for an account that has access to the PingAccess administrative API. Console display name: "Authenticating Username".
-* `basePath` (*Type inferred from the provided value*): The base URL for the PingAccess Administrative API, such as "https://localhost:9000/pa-admin-api/v3". Console display name: "API URL".
-* `sslVerification` (*Type inferred from the provided value*): When enabled, DaVinci verifies the PingAccess SSL certificate and uses encrypted communication. Console display name: "Use SSL Verification".
+* `authPassword` (string; *Type inferred from the provided string value*): The password for an account that has access to the PingAccess administrative API. Console display name: "Authenticating Password".
+* `authUsername` (string; *Type inferred from the provided string value*): The username for an account that has access to the PingAccess administrative API. Console display name: "Authenticating Username".
+* `basePath` (string; *Type inferred from the provided string value*): The base URL for the PingAccess Administrative API, such as "https://localhost:9000/pa-admin-api/v3". Console display name: "API URL".
+* `sslVerification` (string; *Type inferred from the provided string value*): When enabled, DaVinci verifies the PingAccess SSL certificate and uses encrypted communication. Console display name: "Use SSL Verification".
 
 
 Example:
@@ -4256,10 +4256,10 @@ Connector ID (`connector_id` in the resource): `connector-oai-pfadminapi`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `authPassword` (*Type inferred from the provided value*): The password for an account that has access to the PingFederate administrative API. Console display name: "Authenticating Password".
-* `authUsername` (*Type inferred from the provided value*): The username for an account that has access to the PingFederate administrative API. Console display name: "Authenticating Username".
-* `basePath` (*Type inferred from the provided value*): The base URL for the PingFederate administrative API, such as "https://8.8.4.4:9999/pf-admin-api/v1". Console display name: "API URL".
-* `sslVerification` (*Type inferred from the provided value*): When enabled, DaVinci verifies the PingFederate SSL certificate and uses encrypted communication. Console display name: "Use SSL Verification".
+* `authPassword` (string; *Type inferred from the provided string value*): The password for an account that has access to the PingFederate administrative API. Console display name: "Authenticating Password".
+* `authUsername` (string; *Type inferred from the provided string value*): The username for an account that has access to the PingFederate administrative API. Console display name: "Authenticating Username".
+* `basePath` (string; *Type inferred from the provided string value*): The base URL for the PingFederate administrative API, such as "https://8.8.4.4:9999/pf-admin-api/v1". Console display name: "API URL".
+* `sslVerification` (string; *Type inferred from the provided string value*): When enabled, DaVinci verifies the PingFederate SSL certificate and uses encrypted communication. Console display name: "Use SSL Verification".
 
 
 Example:
@@ -4387,7 +4387,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `clientId` (string): The Client ID of the PingOne worker application. Console display name: "Client ID".
 * `clientSecret` (string): The Client Secret of the PingOne worker application. Console display name: "Client Secret".
-* `endpointURL` (*Type inferred from the provided value*): The PingOne Authorize decision endpoint or ID to which the connector submits decision requests. Console display name: "Endpoint".
+* `endpointURL` (string; *Type inferred from the provided string value*): The PingOne Authorize decision endpoint or ID to which the connector submits decision requests. Console display name: "Endpoint".
 
 
 Example:
@@ -4424,7 +4424,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `clientId` (string): The Client ID of your PingOne Worker application. Console display name: "Client ID".
 * `clientSecret` (string): The Client Secret of your PingOne Worker application. Console display name: "Client Secret".
-* `digitalWalletApplicationId` (*Type inferred from the provided value*): Identifier (UUID) associated with the credential digital wallet app. Console display name: "Digital Wallet Application ID".
+* `digitalWalletApplicationId` (string; *Type inferred from the provided string value*): Identifier (UUID) associated with the credential digital wallet app. Console display name: "Digital Wallet Application ID".
 * `envId` (string): Your PingOne Environment ID. Console display name: "Environment ID".
 * `region` (string): The region your PingOne environment is in. Console display name: "Region".
 
@@ -4492,7 +4492,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `clientId` (string): The Client ID of your PingOne Worker application. Console display name: "Client ID".
 * `clientSecret` (string): The Client Secret of your PingOne Worker application. Console display name: "Client Secret".
 * `envId` (string): Your PingOne Environment ID. Console display name: "Environment ID".
-* `policyId` (*Type inferred from the provided value*): The ID of your PingOne MFA device authentication policy. Console display name: "Policy ID".
+* `policyId` (string; *Type inferred from the provided string value*): The ID of your PingOne MFA device authentication policy. Console display name: "Policy ID".
 * `region` (string): The region in which your PingOne environment exists. Console display name: "Region".
 
 
@@ -4541,7 +4541,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `clientId` (string): The Client ID of your PingOne Worker application. Console display name: "Client ID".
 * `clientSecret` (string): The Client Secret of your PingOne Worker application. Console display name: "Client Secret".
 * `envId` (string): Your PingOne Environment ID. Console display name: "Environment ID".
-* `notificationPolicyId` (*Type inferred from the provided value*): A unique identifier for the policy. Console display name: "Notification Policy ID".
+* `notificationPolicyId` (string; *Type inferred from the provided string value*): A unique identifier for the policy. Console display name: "Notification Policy ID".
 * `region` (string): The region in which your PingOne environment exists. Console display name: "Region".
 
 
@@ -4850,8 +4850,8 @@ Connector ID (`connector_id` in the resource): `rsaConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `accessId` (*Type inferred from the provided value*): RSA Access ID from Administration API key file. Console display name: "Access ID".
-* `accessKey` (*Type inferred from the provided value*): RSA Access Key from Administration API key file. Console display name: "Access Key".
+* `accessId` (string; *Type inferred from the provided string value*): RSA Access ID from Administration API key file. Console display name: "Access ID".
+* `accessKey` (string; *Type inferred from the provided string value*): RSA Access Key from Administration API key file. Console display name: "Access Key".
 * `baseUrl` (string): Base URL for RSA API that is provided in Administration API key file. Console display name: "Base URL".
 
 
@@ -4887,11 +4887,11 @@ Connector ID (`connector_id` in the resource): `connectorIdiVERIFIED`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `apiSecret` (*Type inferred from the provided value*): Please enter your API secret that Red Violet has provided you. Console display name: "API Secret".
-* `companyKey` (*Type inferred from the provided value*): Please enter the company key that Red Violet has assigned. Console display name: "Company Key".
+* `apiSecret` (string; *Type inferred from the provided string value*): Please enter your API secret that Red Violet has provided you. Console display name: "API Secret".
+* `companyKey` (string; *Type inferred from the provided string value*): Please enter the company key that Red Violet has assigned. Console display name: "Company Key".
 * `idiEnv` (string): Please choose which coreIDENTITY environment you would like to query . Console display name: "Environment".
-* `siteKey` (*Type inferred from the provided value*): Please enter your site key that Red Violet has provided you. Console display name: "Site Key".
-* `uniqueUrl` (*Type inferred from the provided value*): Please enter your unique URL that Red Violet has provided you. Console display name: "Unique URL".
+* `siteKey` (string; *Type inferred from the provided string value*): Please enter your site key that Red Violet has provided you. Console display name: "Site Key".
+* `uniqueUrl` (string; *Type inferred from the provided string value*): Please enter your unique URL that Red Violet has provided you. Console display name: "Unique URL".
 
 
 Example:
@@ -4979,8 +4979,8 @@ Connector ID (`connector_id` in the resource): `seonConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `baseURL` (*Type inferred from the provided value*): The API URL to target. Console display name: "API Base URL".
-* `licenseKey` (*Type inferred from the provided value*): Your SEON license key. For help, see the SEON REST API documentation. Console display name: "License Key".
+* `baseURL` (string; *Type inferred from the provided string value*): The API URL to target. Console display name: "API Base URL".
+* `licenseKey` (string; *Type inferred from the provided string value*): Your SEON license key. For help, see the SEON REST API documentation. Console display name: "License Key".
 
 
 Example:
@@ -5067,7 +5067,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `clientId` (string): Client Id for your client found in IdentityNow's Dashboard. Console display name: "Client ID".
 * `clientSecret` (string): Client Secret from your client in IdentityNow's Dashboard. Console display name: "Client Secret".
-* `tenant` (*Type inferred from the provided value*): The org name is displayed within the Org Details section of the dashboard. Console display name: "IdentityNow Tenant".
+* `tenant` (string; *Type inferred from the provided string value*): The org name is displayed within the Org Details section of the dashboard. Console display name: "IdentityNow Tenant".
 
 
 Example:
@@ -5102,11 +5102,11 @@ Connector ID (`connector_id` in the resource): `salesforceConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `adminUsername` (*Type inferred from the provided value*): The username of your Salesforce administrator account. Console display name: "Username".
-* `consumerKey` (*Type inferred from the provided value*): The consumer key shown on your Salesforce connected app. Console display name: "Consumer Key".
-* `domainName` (*Type inferred from the provided value*): Your Salesforce domain name, such as "mycompany-dev-ed". Console display name: "Domain Name".
+* `adminUsername` (string; *Type inferred from the provided string value*): The username of your Salesforce administrator account. Console display name: "Username".
+* `consumerKey` (string; *Type inferred from the provided string value*): The consumer key shown on your Salesforce connected app. Console display name: "Consumer Key".
+* `domainName` (string; *Type inferred from the provided string value*): Your Salesforce domain name, such as "mycompany-dev-ed". Console display name: "Domain Name".
 * `environment` (string): If the environment you specify in the Domain Name field is part of a sandbox organization, select Sandbox. Otherwise, select Production. Console display name: "Environment".
-* `privateKey` (*Type inferred from the provided value*): The private key that corresponds to the X.509 certificate you added to your Salesforce connected app. Console display name: "Private Key".
+* `privateKey` (string; *Type inferred from the provided string value*): The private key that corresponds to the X.509 certificate you added to your Salesforce connected app. Console display name: "Private Key".
 
 
 Example:
@@ -5151,8 +5151,8 @@ Connector ID (`connector_id` in the resource): `connectorSalesforceMarketingClou
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `SalesforceMarketingCloudURL` (*Type inferred from the provided value*): URL for Salesforce Marketing Cloud. Example: https://YOUR_SUBDOMAIN.rest.marketingcloudapis.com. Console display name: "Salesforce Marketing Cloud URL".
-* `accountId` (*Type inferred from the provided value*): Account identifier, or MID, of the target business unit. Use to switch between business units. If you don’t specify account_id, the returned access token is in the context of the business unit that created the integration. Console display name: "Account ID".
+* `SalesforceMarketingCloudURL` (string; *Type inferred from the provided string value*): URL for Salesforce Marketing Cloud. Example: https://YOUR_SUBDOMAIN.rest.marketingcloudapis.com. Console display name: "Salesforce Marketing Cloud URL".
+* `accountId` (string; *Type inferred from the provided string value*): Account identifier, or MID, of the target business unit. Use to switch between business units. If you don’t specify account_id, the returned access token is in the context of the business unit that created the integration. Console display name: "Account ID".
 * `clientId` (string): Client ID issued when you create the API integration in Installed Packages. Console display name: "Client ID".
 * `clientSecret` (string): Client secret issued when you create the API integration in Installed Packages. Console display name: "Client Secret".
 * `scope` (string): Space-separated list of data-access permissions for your application. Console display name: "Scope".
@@ -5200,10 +5200,10 @@ Connector ID (`connector_id` in the resource): `connectorSaviyntFlow`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `domainName` (*Type inferred from the provided value*): Provide your Saviynt domain name. Console display name: "Saviynt Domain Name".
-* `path` (*Type inferred from the provided value*): Provide your Saviynt path name. Console display name: "Saviynt Path Name".
-* `saviyntPassword` (*Type inferred from the provided value*): Provide your Saviynt password. Console display name: "Saviynt Password".
-* `saviyntUserName` (*Type inferred from the provided value*): Provide your Saviynt user name. Console display name: "Saviynt User Name".
+* `domainName` (string; *Type inferred from the provided string value*): Provide your Saviynt domain name. Console display name: "Saviynt Domain Name".
+* `path` (string; *Type inferred from the provided string value*): Provide your Saviynt path name. Console display name: "Saviynt Path Name".
+* `saviyntPassword` (string; *Type inferred from the provided string value*): Provide your Saviynt password. Console display name: "Saviynt Password".
+* `saviyntUserName` (string; *Type inferred from the provided string value*): Provide your Saviynt user name. Console display name: "Saviynt User Name".
 
 
 Example:
@@ -5262,7 +5262,7 @@ Connector ID (`connector_id` in the resource): `securIdConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiUrl` (string): The URL of your SecurID authentication API, such as "https://company.auth.securid.com". Console display name: "SecurID Authentication API REST URL".
-* `clientKey` (*Type inferred from the provided value*): Your SecurID authentication client key, such as "vowc450ahs6nry66vok0pvaizwnfr43ewsqcm7tz". Console display name: "Client Key".
+* `clientKey` (string; *Type inferred from the provided string value*): Your SecurID authentication client key, such as "vowc450ahs6nry66vok0pvaizwnfr43ewsqcm7tz". Console display name: "Client Key".
 
 
 Example:
@@ -5292,7 +5292,7 @@ Connector ID (`connector_id` in the resource): `connectorSecuronix`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `domainName` (*Type inferred from the provided value*): Domain Name. Console display name: "Domain Name".
+* `domainName` (string; *Type inferred from the provided string value*): Domain Name. Console display name: "Domain Name".
 * `token` (string): Token for authentication. Console display name: "Token".
 
 
@@ -5324,7 +5324,7 @@ Connector ID (`connector_id` in the resource): `connectorSegment`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `version` (string): Segment - HTTP Tracking API Version. Console display name: "HTTP Tracking API Version".
-* `writeKey` (*Type inferred from the provided value*): The Write Key is used to send data to a specific workplace. Console display name: "Write Key".
+* `writeKey` (string; *Type inferred from the provided string value*): The Write Key is used to send data to a specific workplace. Console display name: "Write Key".
 
 
 Example:
@@ -5354,7 +5354,7 @@ Connector ID (`connector_id` in the resource): `sentilinkConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `account` (*Type inferred from the provided value*): Account ID of SentiLink. Console display name: "Account ID".
+* `account` (string; *Type inferred from the provided string value*): Account ID of SentiLink. Console display name: "Account ID".
 * `apiUrl` (string):  Console display name: "API URL".
 * `javascriptCdnUrl` (string):  Console display name: "Javascript CDN URL".
 * `token` (string): Token ID for SentiLink account. Console display name: "Token ID".
@@ -5397,7 +5397,7 @@ Connector ID (`connector_id` in the resource): `servicenowConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `adminUsername` (*Type inferred from the provided value*): Your ServiceNow administrator username. Console display name: "Username".
+* `adminUsername` (string; *Type inferred from the provided string value*): Your ServiceNow administrator username. Console display name: "Username".
 * `apiUrl` (string): The API URL to target, such as "https://mycompany.service-now.com". Console display name: "API URL".
 * `password` (string): Your ServiceNow administrator password. Console display name: "Password".
 
@@ -5435,10 +5435,10 @@ Connector ID (`connector_id` in the resource): `connectorShopify`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `accessToken` (string): Your store's unique Admin API Access Token that goes into the X-Shopify-Access-Token property. Required scopes when generating Admin API Access Token: 'read_customers' and 'write_customers'. Note any Custom Shopify API calls you intend to use with this connector via Make Custom API Call capability, will have to be added as well. Console display name: "Admin API Access Token".
-* `apiVersion` (*Type inferred from the provided value*): The Shopify version name ( ex. 2022-04 ). Console display name: "API Version Name".
-* `multipassSecret` (*Type inferred from the provided value*): Shopify Multipass Secret. Console display name: "Multipass Secret".
-* `multipassStoreDomain` (*Type inferred from the provided value*): Shopify Multipass Store Domain (yourstorename.myshopify.com). Console display name: "Multipass Store Domain".
-* `yourStoreName` (*Type inferred from the provided value*): The name of your store as Shopify identifies you ( first text that comes after HTTPS:// ). Console display name: "Store Name".
+* `apiVersion` (string; *Type inferred from the provided string value*): The Shopify version name ( ex. 2022-04 ). Console display name: "API Version Name".
+* `multipassSecret` (string; *Type inferred from the provided string value*): Shopify Multipass Secret. Console display name: "Multipass Secret".
+* `multipassStoreDomain` (string; *Type inferred from the provided string value*): Shopify Multipass Store Domain (yourstorename.myshopify.com). Console display name: "Multipass Store Domain".
+* `yourStoreName` (string; *Type inferred from the provided string value*): The name of your store as Shopify identifies you ( first text that comes after HTTPS:// ). Console display name: "Store Name".
 
 
 Example:
@@ -5558,9 +5558,9 @@ Connector ID (`connector_id` in the resource): `connectorSmarty`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `authId` (*Type inferred from the provided value*): Smarty Authentication ID (Found on 'API Keys' tab in Smarty tenant). Console display name: "Auth ID".
-* `authToken` (*Type inferred from the provided value*): Smarty Authentication Token (Found on 'API Keys' tab in Smarty tenant). Console display name: "Auth Token".
-* `license` (*Type inferred from the provided value*): Smarty License Value (Found on 'Subscriptions' tab in Smarty tenant). Console display name: "License".
+* `authId` (string; *Type inferred from the provided string value*): Smarty Authentication ID (Found on 'API Keys' tab in Smarty tenant). Console display name: "Auth ID".
+* `authToken` (string; *Type inferred from the provided string value*): Smarty Authentication Token (Found on 'API Keys' tab in Smarty tenant). Console display name: "Auth Token".
+* `license` (string; *Type inferred from the provided string value*): Smarty License Value (Found on 'Subscriptions' tab in Smarty tenant). Console display name: "License".
 
 
 Example:
@@ -5597,8 +5597,8 @@ Properties (used in the `property` block in the resource as the `name` parameter
 
 * `apiKey` (string): ID+ Key is the API key that you can retrieve from Socure Admin Portal. Console display name: "ID+ Key".
 * `baseUrl` (string): The Socure API URL to target. For a custom value, select Use Custom API URL and enter a value in the Custom API URL field. Console display name: "API URL".
-* `customApiUrl` (*Type inferred from the provided value*): The URL for the Socure API, such as "https://example.socure.com". Console display name: "Custom API URL".
-* `sdkKey` (*Type inferred from the provided value*): SDK Key that you can retrieve from Socure Admin Portal. Console display name: "SDK Key".
+* `customApiUrl` (string; *Type inferred from the provided string value*): The URL for the Socure API, such as "https://example.socure.com". Console display name: "Custom API URL".
+* `sdkKey` (string; *Type inferred from the provided string value*): SDK Key that you can retrieve from Socure Admin Portal. Console display name: "SDK Key".
 * `skWebhookUri` (string): Use this url as the Webhook URL in the Third Party Integration's configuration. Console display name: "Webhook URL".
 
 
@@ -5878,7 +5878,7 @@ Connector ID (`connector_id` in the resource): `tmtConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiKey` (string): API Key for TMT Analysis. Console display name: "API Key".
-* `apiSecret` (*Type inferred from the provided value*): API Secret for TMT Analysis. Console display name: "API Secret".
+* `apiSecret` (string; *Type inferred from the provided string value*): API Secret for TMT Analysis. Console display name: "API Secret".
 * `apiUrl` (string): The Base API URL for TMT Analysis. Console display name: "Base URL".
 
 
@@ -5914,23 +5914,23 @@ Connector ID (`connector_id` in the resource): `connectorTableau`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `addFlowPermissionsRequestBody` (*Type inferred from the provided value*): Add Flow Permissions Request Body in XML Format. Example: <tsRequest><task><flowRun><flow id="flow-id"/><flowRunSpec><flowParameterSpecs><flowParameterSpec parameterId="parameter-id" overrideValue= "overrideValue"/><flowParameterSpecs><flowRunSpec></flowRun></task></tsRequest>. Console display name: "Add Flow Permissions Request Body in XML Format.".
-* `addUsertoSiteRequestBody` (*Type inferred from the provided value*): Add User to Site Request Body in XML Format. Example: <tsRequest><user name="user-name" siteRole="site-role" authSetting="auth-setting" /></tsRequest>. Console display name: "Add User to Site Request Body in XML Format.".
-* `apiVersion` (*Type inferred from the provided value*): The version of the API to use, such as 3.16. Console display name: "api-version".
-* `authId` (*Type inferred from the provided value*): The Tableau-Auth sent along with every request. Console display name: "auth-ID".
-* `createScheduleBody` (*Type inferred from the provided value*): This should contain the entire XML. Eg: <tsRequest><schedule name="schedule-name"priority="schedule-priority"type="schedule-type"frequency="schedule-frequency"executionOrder="schedule-execution-order"><frequencyDetails start="start-time" end="end-time"><intervals><interval interval-expression /></intervals></frequencyDetails></schedule></tsRequest>. Console display name: "XML file format to be used for creating schedule".
-* `datasourceId` (*Type inferred from the provided value*): The ID of the flow. Console display name: "datasource-id".
+* `addFlowPermissionsRequestBody` (string; *Type inferred from the provided string value*): Add Flow Permissions Request Body in XML Format. Example: <tsRequest><task><flowRun><flow id="flow-id"/><flowRunSpec><flowParameterSpecs><flowParameterSpec parameterId="parameter-id" overrideValue= "overrideValue"/><flowParameterSpecs><flowRunSpec></flowRun></task></tsRequest>. Console display name: "Add Flow Permissions Request Body in XML Format.".
+* `addUsertoSiteRequestBody` (string; *Type inferred from the provided string value*): Add User to Site Request Body in XML Format. Example: <tsRequest><user name="user-name" siteRole="site-role" authSetting="auth-setting" /></tsRequest>. Console display name: "Add User to Site Request Body in XML Format.".
+* `apiVersion` (string; *Type inferred from the provided string value*): The version of the API to use, such as 3.16. Console display name: "api-version".
+* `authId` (string; *Type inferred from the provided string value*): The Tableau-Auth sent along with every request. Console display name: "auth-ID".
+* `createScheduleBody` (string; *Type inferred from the provided string value*): This should contain the entire XML. Eg: <tsRequest><schedule name="schedule-name"priority="schedule-priority"type="schedule-type"frequency="schedule-frequency"executionOrder="schedule-execution-order"><frequencyDetails start="start-time" end="end-time"><intervals><interval interval-expression /></intervals></frequencyDetails></schedule></tsRequest>. Console display name: "XML file format to be used for creating schedule".
+* `datasourceId` (string; *Type inferred from the provided string value*): The ID of the flow. Console display name: "datasource-id".
 * `flowId` (string): The flow-id value for the flow you want to add permissions to. Console display name: "flow-id".
-* `groupId` (*Type inferred from the provided value*): The ID of the group. Console display name: "group-id".
-* `jobId` (*Type inferred from the provided value*): The ID of the job. Console display name: "job-id".
-* `scheduleId` (*Type inferred from the provided value*): The ID of the schedule that you are associating with the data source. Console display name: "schedule-id".
-* `serverUrl` (*Type inferred from the provided value*): The tableau server URL Example: https://www.tableau.com:8030. Console display name: "server-url".
-* `siteId` (*Type inferred from the provided value*): The ID of the site that contains the view. Console display name: "site-id".
-* `taskId` (*Type inferred from the provided value*): The ID of the extract refresh task. Console display name: "task-id".
-* `updateScheduleRequestBody` (*Type inferred from the provided value*): This should contain the entire XML. Eg: <tsRequest><schedule name="hourly-schedule-1" priority="50" type="Extract" frequency="Hourly" executionOrder="Parallel"><frequencyDetails start="18:30:00" end="23:00:00"><intervals><interval hours="2" /></intervals></frequencyDetails></schedule></tsRequest>. Console display name: "XML file format to be used for updating schedule".
-* `updateUserRequestBody` (*Type inferred from the provided value*): Update User Request Body in XML Format. <tsRequest><user fullName="new-full-name" email="new-email" password="new-password" siteRole="new-site-role" authSetting="new-auth-setting" /></tsRequest>. Console display name: "Update User Request Body in XML Format.".
+* `groupId` (string; *Type inferred from the provided string value*): The ID of the group. Console display name: "group-id".
+* `jobId` (string; *Type inferred from the provided string value*): The ID of the job. Console display name: "job-id".
+* `scheduleId` (string; *Type inferred from the provided string value*): The ID of the schedule that you are associating with the data source. Console display name: "schedule-id".
+* `serverUrl` (string; *Type inferred from the provided string value*): The tableau server URL Example: https://www.tableau.com:8030. Console display name: "server-url".
+* `siteId` (string; *Type inferred from the provided string value*): The ID of the site that contains the view. Console display name: "site-id".
+* `taskId` (string; *Type inferred from the provided string value*): The ID of the extract refresh task. Console display name: "task-id".
+* `updateScheduleRequestBody` (string; *Type inferred from the provided string value*): This should contain the entire XML. Eg: <tsRequest><schedule name="hourly-schedule-1" priority="50" type="Extract" frequency="Hourly" executionOrder="Parallel"><frequencyDetails start="18:30:00" end="23:00:00"><intervals><interval hours="2" /></intervals></frequencyDetails></schedule></tsRequest>. Console display name: "XML file format to be used for updating schedule".
+* `updateUserRequestBody` (string; *Type inferred from the provided string value*): Update User Request Body in XML Format. <tsRequest><user fullName="new-full-name" email="new-email" password="new-password" siteRole="new-site-role" authSetting="new-auth-setting" /></tsRequest>. Console display name: "Update User Request Body in XML Format.".
 * `userId` (string): The ID of the user to get/give information for. Console display name: "user-id".
-* `workbookId` (*Type inferred from the provided value*): The ID of the workbook to add to the schedule. Console display name: "workbook-id".
+* `workbookId` (string; *Type inferred from the provided string value*): The ID of the workbook to add to the schedule. Console display name: "workbook-id".
 
 
 Example:
@@ -6175,8 +6175,8 @@ Connector ID (`connector_id` in the resource): `tutloxpConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiUrl` (string): The URL for your TransUnion API. Unnecessary to change unless you're testing against a demo tenant. Console display name: "API URL".
-* `dppaCode` (*Type inferred from the provided value*): The DPPA code that determines the level of data access in the API. Console display name: "DPPA Purpose Code".
-* `glbCode` (*Type inferred from the provided value*): The GLB code that determines the level of data access in the API. Console display name: "GLB Purpose Code".
+* `dppaCode` (string; *Type inferred from the provided string value*): The DPPA code that determines the level of data access in the API. Console display name: "DPPA Purpose Code".
+* `glbCode` (string; *Type inferred from the provided string value*): The GLB code that determines the level of data access in the API. Console display name: "GLB Purpose Code".
 * `password` (string): The password for your API User. Console display name: "Password".
 * `username` (string): The username for your API user. Console display name: "Username".
 
@@ -6224,26 +6224,26 @@ Connector ID (`connector_id` in the resource): `transunionConnector`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `apiUrl` (string): The Base API URL for TransUnion. Console display name: "Base URL".
-* `docVerificationPassword` (*Type inferred from the provided value*): Password for Document Verification, provided by TransUnion. Console display name: "Password".
-* `docVerificationPublicKey` (*Type inferred from the provided value*): Public Key for Document Verification, provided by TransUnion. Console display name: "Public Key".
-* `docVerificationSecret` (*Type inferred from the provided value*): Secret for Document Verification, provided by TransUnion. Console display name: "Secret".
-* `docVerificationSiteId` (*Type inferred from the provided value*): Site ID for Document Verification, provided by TransUnion. Console display name: "Site ID".
-* `docVerificationUsername` (*Type inferred from the provided value*): Username for Document Verification, provided by TransUnion. Console display name: "Username".
-* `idVerificationPassword` (*Type inferred from the provided value*): Password for ID Verification, provided by TransUnion. Console display name: "Password".
-* `idVerificationPublicKey` (*Type inferred from the provided value*): Public Key for ID Verification, provided by TransUnion. Console display name: "Public Key".
-* `idVerificationSecret` (*Type inferred from the provided value*): Secret for ID Verification, provided by TransUnion. Console display name: "Secret".
-* `idVerificationSiteId` (*Type inferred from the provided value*): Site ID for ID Verification, provided by TransUnion. Console display name: "Site ID".
-* `idVerificationUsername` (*Type inferred from the provided value*): Username for ID Verification, provided by TransUnion. Console display name: "Username".
-* `kbaPassword` (*Type inferred from the provided value*): Password for KBA, provided by TransUnion. Console display name: "Password".
-* `kbaPublicKey` (*Type inferred from the provided value*): Public Key for KBA, provided by TransUnion. Console display name: "Public Key".
-* `kbaSecret` (*Type inferred from the provided value*): Secret for KBA, provided by TransUnion. Console display name: "Secret".
-* `kbaSiteId` (*Type inferred from the provided value*): Site ID for KBA, provided by TransUnion. Console display name: "Site ID".
-* `kbaUsername` (*Type inferred from the provided value*): Username for KBA, provided by TransUnion. Console display name: "Username".
-* `otpPassword` (*Type inferred from the provided value*): Password for otp Verification, provided by TransUnion. Console display name: "Password".
-* `otpPublicKey` (*Type inferred from the provided value*): Public Key for otp Verification, provided by TransUnion. Console display name: "Public Key".
-* `otpSecret` (*Type inferred from the provided value*): Secret for otp Verification, provided by TransUnion. Console display name: "Secret".
-* `otpSiteId` (*Type inferred from the provided value*): Site ID for otp Verification, provided by TransUnion. Console display name: "Site ID".
-* `otpUsername` (*Type inferred from the provided value*): Username for otp Verification, provided by TransUnion. Console display name: "Username".
+* `docVerificationPassword` (string; *Type inferred from the provided string value*): Password for Document Verification, provided by TransUnion. Console display name: "Password".
+* `docVerificationPublicKey` (string; *Type inferred from the provided string value*): Public Key for Document Verification, provided by TransUnion. Console display name: "Public Key".
+* `docVerificationSecret` (string; *Type inferred from the provided string value*): Secret for Document Verification, provided by TransUnion. Console display name: "Secret".
+* `docVerificationSiteId` (string; *Type inferred from the provided string value*): Site ID for Document Verification, provided by TransUnion. Console display name: "Site ID".
+* `docVerificationUsername` (string; *Type inferred from the provided string value*): Username for Document Verification, provided by TransUnion. Console display name: "Username".
+* `idVerificationPassword` (string; *Type inferred from the provided string value*): Password for ID Verification, provided by TransUnion. Console display name: "Password".
+* `idVerificationPublicKey` (string; *Type inferred from the provided string value*): Public Key for ID Verification, provided by TransUnion. Console display name: "Public Key".
+* `idVerificationSecret` (string; *Type inferred from the provided string value*): Secret for ID Verification, provided by TransUnion. Console display name: "Secret".
+* `idVerificationSiteId` (string; *Type inferred from the provided string value*): Site ID for ID Verification, provided by TransUnion. Console display name: "Site ID".
+* `idVerificationUsername` (string; *Type inferred from the provided string value*): Username for ID Verification, provided by TransUnion. Console display name: "Username".
+* `kbaPassword` (string; *Type inferred from the provided string value*): Password for KBA, provided by TransUnion. Console display name: "Password".
+* `kbaPublicKey` (string; *Type inferred from the provided string value*): Public Key for KBA, provided by TransUnion. Console display name: "Public Key".
+* `kbaSecret` (string; *Type inferred from the provided string value*): Secret for KBA, provided by TransUnion. Console display name: "Secret".
+* `kbaSiteId` (string; *Type inferred from the provided string value*): Site ID for KBA, provided by TransUnion. Console display name: "Site ID".
+* `kbaUsername` (string; *Type inferred from the provided string value*): Username for KBA, provided by TransUnion. Console display name: "Username".
+* `otpPassword` (string; *Type inferred from the provided string value*): Password for otp Verification, provided by TransUnion. Console display name: "Password".
+* `otpPublicKey` (string; *Type inferred from the provided string value*): Public Key for otp Verification, provided by TransUnion. Console display name: "Public Key".
+* `otpSecret` (string; *Type inferred from the provided string value*): Secret for otp Verification, provided by TransUnion. Console display name: "Secret".
+* `otpSiteId` (string; *Type inferred from the provided string value*): Site ID for otp Verification, provided by TransUnion. Console display name: "Site ID".
+* `otpUsername` (string; *Type inferred from the provided string value*): Username for otp Verification, provided by TransUnion. Console display name: "Username".
 
 
 Example:
@@ -6368,7 +6368,7 @@ Connector ID (`connector_id` in the resource): `connectorTrulioo`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `clientID` (*Type inferred from the provided value*): Trulioo Client ID. Console display name: "Client ID".
+* `clientID` (string; *Type inferred from the provided string value*): Trulioo Client ID. Console display name: "Client ID".
 * `clientSecret` (string): Trulioo Client Secret. Console display name: "Client Secret".
 
 
@@ -6399,10 +6399,10 @@ Connector ID (`connector_id` in the resource): `twilioConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `accountSid` (*Type inferred from the provided value*):  Console display name: "Account Sid".
+* `accountSid` (string; *Type inferred from the provided string value*):  Console display name: "Account Sid".
 * `authDescription` (string):  Console display name: "Authentication Description".
 * `authMessageTemplate` (string):  Console display name: "Text Message Template (Authentication)".
-* `authToken` (*Type inferred from the provided value*):  Console display name: "Auth Token".
+* `authToken` (string; *Type inferred from the provided string value*):  Console display name: "Auth Token".
 * `connectorName` (string):  Console display name: "Connector Name".
 * `connectorName` (string):  Console display name: "Connector Name".
 * `description` (string):  Console display name: "Description".
@@ -6411,7 +6411,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `iconUrl` (string):  Console display name: "Icon URL".
 * `iconUrlPng` (string):  Console display name: "Icon URL in PNG".
 * `registerMessageTemplate` (string):  Console display name: "Text Message Template (Registration)".
-* `senderPhoneNumber` (*Type inferred from the provided value*):  Console display name: "Sender Phone Number".
+* `senderPhoneNumber` (string; *Type inferred from the provided string value*):  Console display name: "Sender Phone Number".
 * `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
 * `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
 * `title` (string):  Console display name: "Title".
@@ -6520,7 +6520,7 @@ Connector ID (`connector_id` in the resource): `unifyIdConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `accountId` (*Type inferred from the provided value*):  Console display name: "Account ID".
+* `accountId` (string; *Type inferred from the provided string value*):  Console display name: "Account ID".
 * `apiKey` (string):  Console display name: "API Key".
 * `connectorName` (string):  Console display name: "Connector Name".
 * `details1` (string):  Console display name: "Credentials Details 1".
@@ -6770,8 +6770,8 @@ Connector ID (`connector_id` in the resource): `connectorVericlouds`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `apiSecret` (*Type inferred from the provided value*): The API secret assigned by VeriClouds to the customer. The secret is also used for decrypting sensitive data such as leaked passwords. It is important to never share the secret with any 3rd party. Console display name: "apiSecret".
-* `apikey` (*Type inferred from the provided value*): The API key assigned by VeriClouds to the customer. Console display name: "apiKey".
+* `apiSecret` (string; *Type inferred from the provided string value*): The API secret assigned by VeriClouds to the customer. The secret is also used for decrypting sensitive data such as leaked passwords. It is important to never share the secret with any 3rd party. Console display name: "apiSecret".
+* `apikey` (string; *Type inferred from the provided string value*): The API key assigned by VeriClouds to the customer. Console display name: "apiKey".
 
 
 Example:
@@ -6801,7 +6801,7 @@ Connector ID (`connector_id` in the resource): `veriffConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `access_token` (*Type inferred from the provided value*): The API Key provided by Veriff, such as "323aa031-b4af-4e12-b354-de0da91a2ab0". Console display name: "API Key".
+* `access_token` (string; *Type inferred from the provided string value*): The API Key provided by Veriff, such as "323aa031-b4af-4e12-b354-de0da91a2ab0". Console display name: "API Key".
 * `baseUrl` (string): The API URL to target, such as “https://stationapi.veriff.com/”. Console display name: "Base URL".
 * `password` (string): The Share Secret Key from Veriff to create HMAC signature, such as "20bf4sf0-fbg7-488c-b4f1-d9594lf707bk". Console display name: "Shared Secret Key".
 
@@ -6889,9 +6889,9 @@ Connector ID (`connector_id` in the resource): `connectorWhatsAppBusiness`
 Properties (used in the `property` block in the resource as the `name` parameter):
 
 * `accessToken` (string): WhatsApp Access Token. Console display name: "Access Token".
-* `appSecret` (*Type inferred from the provided value*): WhatsApp App Secret for the application, it is used to verify the webhook signatures. Console display name: "App Secret".
+* `appSecret` (string; *Type inferred from the provided string value*): WhatsApp App Secret for the application, it is used to verify the webhook signatures. Console display name: "App Secret".
 * `skWebhookUri` (string): Use this url as the Webhook URL in the Third Party Integration's configuration. Console display name: "Redirect Webhook URI".
-* `verifyToken` (*Type inferred from the provided value*): Meta webhook verify token. Console display name: "Webhook Verify Token".
+* `verifyToken` (string; *Type inferred from the provided string value*): Meta webhook verify token. Console display name: "Webhook Verify Token".
 * `version` (string): WhatsApp Graph API Version. Console display name: "Version".
 
 
@@ -6962,10 +6962,10 @@ Connector ID (`connector_id` in the resource): `wireWheelConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `baseURL` (*Type inferred from the provided value*): The base API URL of the WireWheel environment. Console display name: "WireWheel Base API URL".
+* `baseURL` (string; *Type inferred from the provided string value*): The base API URL of the WireWheel environment. Console display name: "WireWheel Base API URL".
 * `clientId` (string): Client ID from WireWheel Channel settings. Console display name: "Client ID".
 * `clientSecret` (string): Client Secret from WireWheel Channel settings. Console display name: "Client Secret".
-* `issuerId` (*Type inferred from the provided value*): Issuer URL from WireWheel Channel settings. Console display name: "Issuer URL".
+* `issuerId` (string; *Type inferred from the provided string value*): Issuer URL from WireWheel Channel settings. Console display name: "Issuer URL".
 
 
 Example:
@@ -7055,9 +7055,9 @@ Connector ID (`connector_id` in the resource): `connectorZendesk`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `apiToken` (*Type inferred from the provided value*): An Active Zendesk API Token (admin center->Apps&Integrations->Zendesk API). Console display name: "Zendesk API Token".
-* `emailUsername` (*Type inferred from the provided value*): Email used as 'username' for your Zendesk account. Console display name: "Email of User (username)".
-* `subdomain` (*Type inferred from the provided value*): Your Zendesk subdomain (ex. {subdomain}.zendesk.com/api/v2/...). Console display name: "Subdomain".
+* `apiToken` (string; *Type inferred from the provided string value*): An Active Zendesk API Token (admin center->Apps&Integrations->Zendesk API). Console display name: "Zendesk API Token".
+* `emailUsername` (string; *Type inferred from the provided string value*): Email used as 'username' for your Zendesk account. Console display name: "Email of User (username)".
+* `subdomain` (string; *Type inferred from the provided string value*): Your Zendesk subdomain (ex. {subdomain}.zendesk.com/api/v2/...). Console display name: "Subdomain".
 
 
 Example:
@@ -7129,11 +7129,11 @@ Connector ID (`connector_id` in the resource): `connectorZscaler`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `basePath` (*Type inferred from the provided value*): basePath. Console display name: "Base Path".
-* `baseURL` (*Type inferred from the provided value*): baseURL. Console display name: "Base URL".
-* `zscalerAPIkey` (*Type inferred from the provided value*): Zscaler APIkey. Console display name: "Zscaler APIkey".
-* `zscalerPassword` (*Type inferred from the provided value*): Zscaler Domain Password. Console display name: "Zscaler Password".
-* `zscalerUsername` (*Type inferred from the provided value*): Zscaler Domain Username. Console display name: "Zscaler Username".
+* `basePath` (string; *Type inferred from the provided string value*): basePath. Console display name: "Base Path".
+* `baseURL` (string; *Type inferred from the provided string value*): baseURL. Console display name: "Base URL".
+* `zscalerAPIkey` (string; *Type inferred from the provided string value*): Zscaler APIkey. Console display name: "Zscaler APIkey".
+* `zscalerPassword` (string; *Type inferred from the provided string value*): Zscaler Domain Password. Console display name: "Zscaler Password".
+* `zscalerUsername` (string; *Type inferred from the provided string value*): Zscaler Domain Username. Console display name: "Zscaler Username".
 
 
 Example:
@@ -7199,7 +7199,7 @@ Properties (used in the `property` block in the resource as the `name` parameter
 * `kioskMode` (boolean):  Console display name: "Kiosk Mode".
 * `logo` (string): You can use a custom logo by simply passing a relative link, absolute path or data URI to your logo. If you do not want a logo to show pass the logo attribute as null. Console display name: "Logo".
 * `password` (string):  Console display name: "Password".
-* `secret` (*Type inferred from the provided value*):  Console display name: "Secret".
+* `secret` (string; *Type inferred from the provided string value*):  Console display name: "Secret".
 * `showCountdown` (boolean):  Console display name: "Show Countdown".
 * `showCredAddedOn` (boolean):  Console display name: "Show Credentials Added On?".
 * `showCredAddedVia` (boolean):  Console display name: "Show Credentials Added through ?".
@@ -7482,7 +7482,7 @@ Connector ID (`connector_id` in the resource): `connectorIPStack`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `allowInsecureIPStackConnection` (*Type inferred from the provided value*): The Free IPStack Subscription Plan does not support HTTPS connections. For more information refer to https://ipstack.com/plan. Console display name: "Allow Insecure ipstack Connection?".
+* `allowInsecureIPStackConnection` (string; *Type inferred from the provided string value*): The Free IPStack Subscription Plan does not support HTTPS connections. For more information refer to https://ipstack.com/plan. Console display name: "Allow Insecure ipstack Connection?".
 * `apiKey` (string): The ipstack API key to use the service. Console display name: "API key".
 
 
@@ -7513,7 +7513,7 @@ Connector ID (`connector_id` in the resource): `neoeyedConnector`
 
 Properties (used in the `property` block in the resource as the `name` parameter):
 
-* `appKey` (*Type inferred from the provided value*): Unique key for the application. Console display name: "Application Key".
+* `appKey` (string; *Type inferred from the provided string value*): Unique key for the application. Console display name: "Application Key".
 * `javascriptCdnUrl` (string): URL of javascript CDN of neoEYED. Console display name: "Javascript CDN URL".
 
 

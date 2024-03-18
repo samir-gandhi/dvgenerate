@@ -10,7 +10,7 @@ Connector ID (`connector_id` in the resource): `{{ .ConnectorId }}`
 {{with .Properties}}
 Properties (used in the `property` block in the resource as the `name` parameter):
 {{ range . }}
-* `{{ .Name }}` ({{with .Type}}{{.}}{{else}}*Type inferred from the provided value*{{end}}): {{with .Description}}{{.}} {{end}}{{ with .ConsoleDisplayName }}Console display name: "{{.}}".{{end}}
+* `{{ .Name }}` ({{with .Type}}{{.}}{{else}}string; *Type inferred from the provided string value*{{end}}): {{with .Description}}{{.}} {{end}}{{ with .ConsoleDisplayName }}Console display name: "{{.}}".{{end}}
 {{- end }}
 {{ else }}
 *No properties*
