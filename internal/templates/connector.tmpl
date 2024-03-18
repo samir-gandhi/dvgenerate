@@ -1,42 +1,37 @@
-
-{{ define "allconnections" }}
 ## DaVinci Connection Definitions
 
 Below is a list of all available DaVinci Connections available for use in `davinci_connection` resource. 
 If the `value` type of a property is not defined it must be inferred.
 
+{{ range . }}
+### {{ .ConnectorName }}
 
-  {{ range $value := . }}
-    {{- template "connection" $value -}}
-  {{ end }}
+Connector ID (`connector_id` in the resource): `{{ .ConnectorId }}`
+{{with .Properties}}
+Properties (used in the `property` block in the resource as the `name` parameter):
+{{ range . }}
+* `{{ .Name }}` ({{with .Type}}{{.}}{{else}}*Type inferred from the provided value*{{end}}): {{with .Description}}{{.}} {{end}}{{ with .ConsoleDisplayName }}Console display name: "{{.}}".{{end}}
+{{- end }}
+{{ else }}
+*No properties*
 {{ end }}
 
-{{ define "connection" }}
-### {{ .Name }}
+Example:
+```hcl
+resource "davinci_connection" "{{ .ConnectorId }}" {
+  environment_id = var.pingone_environment_id
 
-**Connector Display Name**: {{ .Name }}
-
-**Connector ID** - schema `connectorId`: {{ .ConnectorID }}
-
-**Properties Table:** 
-{{ template "properties" . }}
+  connector_id   = "{{ .ConnectorId }}"
+  name           = "My awesome {{ .ConnectorId }}"
+{{with .Properties -}}
+{{ range . }}
+  property {
+    name  = "{{ .Name }}"
+    value = # value here
+  }
+{{ end -}}
+{{ end -}}
+}
+```
 
 {{ end }}
-
-{{ define "properties" }}
-{{ $props := .Properties }}
-{{ $acv := .AccountConfigView }}
-| Display Name | `name` | `value` Type | Description |
-| ---- | ---- | ---- | ----|
-{{- if $acv }}
-  {{- range $key, $pVal := $props }}
-    {{- range $acvVal := $acv.Items }}
-    {{- if eq $key $acvVal.PropertyName }}
-| {{ $pVal.DisplayName }} | `{{ $key }}` | `{{ $pVal.Type }}` | {{ $pVal.Info }} |
-    {{- end}}
-    {{- end }}
-  {{- end }} 
-{{ end }}
-{{ end }}
-
-{{ template "allconnections" . }}
