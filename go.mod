@@ -2,7 +2,7 @@ module github.com/samir-gandhi/dvgenerate
 
 go 1.21
 
-require github.com/samir-gandhi/davinci-client-go v0.0.49
+require github.com/samir-gandhi/davinci-client-go v0.1.0
 
 require (
 	github.com/go-playground/locales v0.14.0 // indirect
