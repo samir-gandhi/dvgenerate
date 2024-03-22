@@ -15,6 +15,19 @@ import (
 	"text/template"
 )
 
+type connectorDocData struct {
+	ConnectorName string
+	ConnectorId   string
+	Properties    []connectorDocPropertyData
+}
+
+type connectorDocPropertyData struct {
+	Name               string
+	Type               *string
+	Description        *string
+	ConsoleDisplayName *string
+}
+
 func Generate() {
 
 	dir, err := filepath.Abs(filepath.Dir("."))
@@ -22,13 +35,9 @@ func Generate() {
 		panic(err)
 	}
 	fmt.Println("dir:", dir)
-	myDir := "./"
-	if !strings.Contains(dir, "samir-gandhi/dvgenerate") {
-		myDir = "../vendor/github.com/samir-gandhi/dvgenerate/"
-	}
 
 	// nameReg := regexp.MustCompile(`name=([A-Za-z0-9_]+),`)
-	t, err := template.ParseFiles(myDir + "internal/templates/connector.tmpl")
+	t, err := template.ParseFiles(dir + "/internal/templates/connector.tmpl")
 	if err != nil {
 		panic(err)
 	}
@@ -45,28 +54,79 @@ func Generate() {
 		panic(err)
 	}
 
-	err = t.ExecuteTemplate(file, "allconnections", conns)
+	err = t.Execute(file, conns)
 	if err != nil {
 		panic(err)
 	}
-
-	// t.Execute(file, map[string]string{
-	// 	"title": "Initial Doc",
-	// 	"name":  "John Doe",
-	// })
 }
 
-func readConnectors() ([]dv.Connector, error) {
+func readConnectors() (connectionByName, error) {
 	c, err := testClient()
 	if err != nil {
 		return nil, err
 	}
-	connectors, err := c.ReadConnectors(&c.CompanyID, nil)
+	environment_id := os.Getenv("PINGONE_ENVIRONMENT_ID")
+	connectors, err := c.ReadConnectors(&environment_id, nil)
 	if err != nil {
 		return nil, err
 	}
-	sort.Sort(ConnByName(connectors))
-	return connectors, nil
+
+	connectorList := make(connectionByName, 0)
+
+	for _, conn := range connectors {
+
+		connectorProperties := make(connectionPropertyByName, 0)
+		if acv := conn.AccountConfigView; acv != nil {
+			for key, prop := range conn.Properties {
+
+				for _, acv := range acv.Items {
+
+					if acvProperty := acv.PropertyName; acvProperty != nil && *acvProperty == key {
+
+						description := prop.Info
+
+						if description != nil && strings.TrimSpace(*description) != "" && !strings.HasSuffix(strings.TrimSpace(*description), ".") {
+							descriptionTemp := fmt.Sprintf("%s.", *description)
+							description = &descriptionTemp
+						}
+
+						connectorProperties = append(connectorProperties, connectorDocPropertyData{
+							Name:               key,
+							Type:               prop.Type,
+							Description:        description,
+							ConsoleDisplayName: prop.DisplayName,
+						})
+					}
+				}
+			}
+		}
+
+		sort.Sort(connectorProperties)
+
+		var connectorId, connectorName string
+
+		if v := conn.ConnectorID; v != nil {
+			connectorId = *v
+		} else {
+			connectorId = "No value"
+		}
+
+		if v := conn.Name; v != nil {
+			connectorName = *v
+		} else {
+			connectorName = "No name"
+		}
+
+		connectorList = append(connectorList, connectorDocData{
+			ConnectorName: connectorName,
+			ConnectorId:   connectorId,
+			Properties:    connectorProperties,
+		})
+	}
+
+	sort.Sort(connectorList)
+
+	return connectorList, nil
 }
 
 func testClient() (*dv.APIClient, error) {
@@ -101,15 +161,18 @@ func testClient() (*dv.APIClient, error) {
 	if err != nil {
 		return nil, err
 	}
-	if environment_id != "" {
-		c.CompanyID = environment_id
-	}
 
 	return c, nil
 }
 
-type ConnByName []dv.Connector
+type connectionPropertyByName []connectorDocPropertyData
 
-func (a ConnByName) Len() int           { return len(a) }
-func (a ConnByName) Less(i, j int) bool { return a[i].Name < a[j].Name }
-func (a ConnByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a connectionPropertyByName) Len() int           { return len(a) }
+func (a connectionPropertyByName) Less(i, j int) bool { return a[i].Name < a[j].Name }
+func (a connectionPropertyByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+type connectionByName []connectorDocData
+
+func (a connectionByName) Len() int           { return len(a) }
+func (a connectionByName) Less(i, j int) bool { return a[i].ConnectorName < a[j].ConnectorName }
+func (a connectionByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
