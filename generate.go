@@ -182,6 +182,8 @@ func (a connectionPropertyByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] 
 
 type connectionByName []connectorDocData
 
-func (a connectionByName) Len() int           { return len(a) }
-func (a connectionByName) Less(i, j int) bool { return a[i].ConnectorName < a[j].ConnectorName }
-func (a connectionByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a connectionByName) Len() int { return len(a) }
+func (a connectionByName) Less(i, j int) bool {
+	return fmt.Sprintf("%s%s", a[i].ConnectorName, a[i].ConnectorId) < fmt.Sprintf("%s%s", a[j].ConnectorName, a[j].ConnectorId)
+}
+func (a connectionByName) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
