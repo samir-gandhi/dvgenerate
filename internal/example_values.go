@@ -8,7 +8,7 @@ type ExampleValue struct {
 var (
 	ExampleValues = map[string]map[string]ExampleValue{
 		"connector1Kosmos": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorAWSLambda": {
@@ -18,7 +18,7 @@ var (
 		},
 
 		"awsIdpConnector": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorAmazonAwsSecretsManager": {
@@ -32,7 +32,7 @@ var (
 		},
 
 		"connectorAcuant": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"adobemarketoConnector": {
@@ -42,7 +42,7 @@ var (
 		},
 
 		"connectorAllthenticate": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorAmazonDynamoDB": {
@@ -59,7 +59,142 @@ var (
 		},
 
 		"appleConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({
+				"properties": {
+				  "providerName": {
+					"displayName": "Provider Name",
+					"preferredControlType": "textField",
+					"value": "${var.appleconnector_property_provider_name}"
+				  },
+				  "skRedirectUri": {
+					"displayName": "DaVinci Redirect URL",
+					"info": "Your DaVinci redirect URL. This allows an identity provider to redirect the browser back to DaVinci.",
+					"preferredControlType": "textField",
+					"disabled": true,
+					"initializeValue": "SINGULARKEY_REDIRECT_URI",
+					"copyToClip": true
+				  },
+				  "iss": {
+					"displayName": "Issuer",
+					"info": "The issuer registered claim identifies the principal that issued the client secret. Since the client secret was generated for your developer team, use your 10-character Team ID associated with your developer account.",
+					"preferredControlType": "textField",
+					"required": true,
+					"value": "${var.appleconnector_property_issuer}"
+				  },
+				  "kid": {
+					"displayName": "Key ID",
+					"info": "A 10-character key identifier generated for the Sign in with Apple private key associated with your developer account.",
+					"preferredControlType": "textField",
+					"required": true,
+					"value": "${var.appleconnector_property_key_id}"
+				  },
+				  "issuerUrl": {
+					"displayName": "Issuer URL",
+					"preferredControlType": "textField",
+					"required": true,
+					"value": "${var.appleconnector_property_issuer_url}"
+				  },
+				  "authorizationEndpoint": {
+					"preferredControlType": "textField",
+					"displayName": "Authorization Endpoint",
+					"required": true,
+					"value": "${var.appleconnector_property_authorization_endpoint}"
+				  },
+				  "tokenEndpoint": {
+					"preferredControlType": "textField",
+					"displayName": "Token Endpoint",
+					"required": true,
+					"value": "${var.appleconnector_property_token_endpoint}"
+				  },
+				  "clientId": {
+					"displayName": "Client ID",
+					"preferredControlType": "textField",
+					"required": true,
+					"value": "${var.appleconnector_property_client_id}"
+				  },
+				  "clientSecret": {
+					"displayName": "Private Key",
+					"info": "Content of your 'Sign in with Apple' private key associated with your developer account.",
+					"preferredControlType": "textArea",
+					"secure": true,
+					"required": true,
+					"value": "${var.appleconnector_property_private_key}"
+				  },
+				  "scope": {
+					"displayName": "Scope",
+					"preferredControlType": "textField",
+					"requiredValue": "email",
+					"required": true,
+					"value": "${var.appleconnector_property_scope}"
+				  },
+				  "userConnectorAttributeMapping": {
+					"type": "object",
+					"preferredControlType": "userConnectorAttributeMapping",
+					"newMappingAllowed": true,
+					"title1": null,
+					"title2": null,
+					"sections": [
+					  "attributeMapping"
+					],
+					"value": {
+					  "userPoolConnectionId": "defaultUserPool",
+					  "mapping": {
+						"username": {
+						  "value1": "sub"
+						},
+						"name": {
+						  "value1": "email"
+						},
+						"email": {
+						  "value1": "email"
+						}
+					  }
+					}
+				  },
+				  "customAttributes": {
+					"type": "array",
+					"displayName": "Connector Attributes",
+					"preferredControlType": "tableViewAttributes",
+					"info": "These attributes will be available in User Connector Attribute Mapping.",
+					"sections": [
+					  "connectorAttributes"
+					],
+					"value": [
+					  {
+						"name": "sub",
+						"description": "Sub",
+						"type": "string",
+						"value": null,
+						"minLength": "1",
+						"maxLength": "300",
+						"required": true,
+						"attributeType": "sk"
+					  },
+					  {
+						"name": "email",
+						"description": "Email",
+						"type": "string",
+						"value": null,
+						"minLength": "1",
+						"maxLength": "250",
+						"required": false,
+						"attributeType": "sk"
+					  }
+					]
+				  },
+				  "disableCreateUser": {
+					"displayName": "Disable Shadow User Creation",
+					"preferredControlType": "toggleSwitch",
+					"value": false,
+					"info": "A shadow user is implicitly created, unless disabled."
+				  },
+				  "returnToUrl": {
+					"displayName": "Application Return To URL",
+					"preferredControlType": "textField",
+					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application."
+				  }
+				}
+			  })`},
 		},
 
 		"argyleConnector": {
@@ -71,11 +206,11 @@ var (
 		},
 
 		"connectorAsignio": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorAuthid": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"authenticIdConnector": {
@@ -97,11 +232,11 @@ var (
 		"azureUserManagementConnector": {
 			"baseURL": ExampleValue{Value: "var.base_url"},
 			// "customApiUrl": ExampleValue{Value: "# property value"},
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorBadge": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"bambooConnector": {
@@ -120,7 +255,7 @@ var (
 		},
 
 		"connectorBeyondIdentity": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorBTps": {
@@ -151,7 +286,7 @@ var (
 		},
 
 		"bitbucketIdpConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"castleConnector": {
@@ -160,7 +295,7 @@ var (
 
 		"connectorCircleAccess": {
 			// "appKey":      ExampleValue{Value: "# property value"},
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 			// "loginUrl":    ExampleValue{Value: "# property value"},
 			// "readKey":     ExampleValue{Value: "# property value"},
 			// "returnToUrl": ExampleValue{Value: "# property value"},
@@ -190,7 +325,7 @@ var (
 		},
 
 		"connectIdConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"cookieConnector": {
@@ -210,7 +345,7 @@ var (
 		},
 
 		"connectorDaonidv": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"daonConnector": {
@@ -235,15 +370,15 @@ var (
 		},
 
 		"digilockerConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"digidentityConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"duoConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"entrustConnector": {
@@ -262,7 +397,132 @@ var (
 		},
 
 		"facebookIdpConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({
+				"properties": {
+				  "providerName": {
+					"type": "string",
+					"displayName": "Provider Name",
+					"preferredControlType": "textField",
+					"value": "Login with Facebook"
+				  },
+				  "skRedirectUri": {
+					"type": "string",
+					"displayName": "DaVinci Redirect URL",
+					"info": "Enter this in your identity provider configuration to allow it to redirect the browser back to DaVinci. If you use a custom PingOne domain, modify the URL accordingly.",
+					"preferredControlType": "textField",
+					"disabled": true,
+					"initializeValue": "SINGULARKEY_REDIRECT_URI",
+					"copyToClip": true
+				  },
+				  "clientId": {
+					"type": "string",
+					"displayName": "Application ID",
+					"preferredControlType": "textField",
+					"required": true,
+					"value": "${var.facebookidpconnector_property_application_id}"
+				  },
+				  "clientSecret": {
+					"type": "string",
+					"displayName": "Client Secret",
+					"preferredControlType": "textField",
+					"secure": true,
+					"required": true,
+					"value": "${var.facebookidpconnector_property_client_secret}"
+				  },
+				  "scope": {
+					"type": "string",
+					"displayName": "Scope",
+					"preferredControlType": "textField",
+					"requiredValue": "email",
+					"required": true,
+					"value": "${var.facebookidpconnector_property_scope}"
+				  },
+				  "disableCreateUser": {
+					"displayName": "Disable Shadow User",
+					"preferredControlType": "toggleSwitch",
+					"value": true,
+					"info": "A shadow user is implicitly created, unless disabled."
+				  },
+				  "userConnectorAttributeMapping": {
+					"type": "object",
+					"displayName": null,
+					"preferredControlType": "userConnectorAttributeMapping",
+					"newMappingAllowed": true,
+					"title1": null,
+					"title2": null,
+					"sections": [
+					  "attributeMapping"
+					],
+					"value": {
+					  "userPoolConnectionId": "defaultUserPool",
+					  "mapping": {
+						"username": {
+						  "value1": "id"
+						},
+						"name": {
+						  "value1": "name"
+						},
+						"email": {
+						  "value1": "email"
+						}
+					  }
+					}
+				  },
+				  "customAttributes": {
+					"type": "array",
+					"displayName": "Connector Attributes",
+					"preferredControlType": "tableViewAttributes",
+					"info": "These attributes will be available in User Connector Attribute Mapping.",
+					"sections": [
+					  "connectorAttributes"
+					],
+					"value": [
+					  {
+						"name": "id",
+						"description": "ID",
+						"type": "string",
+						"value": null,
+						"minLength": "1",
+						"maxLength": "300",
+						"required": true,
+						"attributeType": "sk"
+					  },
+					  {
+						"name": "name",
+						"description": "Display Name",
+						"type": "string",
+						"value": null,
+						"minLength": "1",
+						"maxLength": "250",
+						"required": false,
+						"attributeType": "sk"
+					  },
+					  {
+						"name": "email",
+						"description": "Email",
+						"type": "string",
+						"value": null,
+						"minLength": "1",
+						"maxLength": "250",
+						"required": false,
+						"attributeType": "sk"
+					  }
+					]
+				  },
+				  "state": {
+					"displayName": "Send state with request",
+					"value": true,
+					"preferredControlType": "toggleSwitch",
+					"info": "Send unique state value with every request"
+				  },
+				  "returnToUrl": {
+					"displayName": "Application Return To URL",
+					"preferredControlType": "textField",
+					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application.",
+					"value": "${var.facebookidpconnector_property_callback_url}"
+				  }
+				}
+			  })`},
 		},
 
 		"fingerprintjsConnector": {
@@ -303,7 +563,7 @@ var (
 		},
 
 		"githubIdpConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorGoogleanalyticsUA": {
@@ -312,11 +572,11 @@ var (
 		},
 
 		"connectorGoogleChromeEnterprise": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"googleConnector": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"googleWorkSpaceAdminConnector": {
@@ -347,7 +607,7 @@ var (
 		},
 
 		"hyprConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"haveIBeenPwnedConnector": {
@@ -357,7 +617,7 @@ var (
 		},
 
 		"connectorHello": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorHubspot": {
@@ -365,7 +625,7 @@ var (
 		},
 
 		"idDatawebConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"idranddConnector": {
@@ -374,11 +634,11 @@ var (
 		},
 
 		"connectorIdMeIdentity": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"idMeConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"idemiaConnector": {
@@ -396,7 +656,7 @@ var (
 		},
 
 		"connectorIdmelon": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"idmissionConnector": {
@@ -420,15 +680,15 @@ var (
 		},
 
 		"idrampOidcConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"incodeConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorInfinipoint": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorJamf": {
@@ -508,7 +768,7 @@ var (
 		},
 
 		"connectorKeyless": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"pingOneLDAPConnector": {
@@ -527,7 +787,7 @@ var (
 		},
 
 		"linkedInConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorMailchimp": {
@@ -555,11 +815,11 @@ var (
 		},
 
 		"microsoftIdpConnector": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"microsoftTeamsConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"nuanceConnector": {
@@ -583,7 +843,7 @@ var (
 		},
 
 		"genericConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorOpswat": {
@@ -650,11 +910,76 @@ var (
 		},
 
 		"pingFederateConnectorV2": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({
+				"properties": {
+				  "skRedirectUri": {
+					"type": "string",
+					"displayName": "Redirect URL",
+					"info": "Enter this in your identity provider configuration to allow it to redirect the browser back to DaVinci. If you use a custom PingOne domain, modify the URL accordingly.",
+					"preferredControlType": "textField",
+					"disabled": true,
+					"initializeValue": "SINGULARKEY_REDIRECT_URI",
+					"copyToClip": true
+				  },
+				  "clientId": {
+					"type": "string",
+					"displayName": "Client ID",
+					"placeholder": "",
+					"preferredControlType": "textField",
+					"required": true,
+					"value": "${var.pingfederateconnectorv2_property_client_id}"
+				  },
+				  "clientSecret": {
+					"type": "string",
+					"displayName": "Client Secret",
+					"preferredControlType": "textField",
+					"secure": true,
+					"required": true,
+					"value": "${var.pingfederateconnectorv2_property_client_secret}"
+				  },
+				  "scope": {
+					"type": "string",
+					"displayName": "Scope",
+					"preferredControlType": "textField",
+					"requiredValue": "openid",
+					"value": "${var.pingfederateconnectorv2_property_client_scope}",
+					"required": true
+				  },
+				  "issuerUrl": {
+					"type": "string",
+					"displayName": "Base URL",
+					"preferredControlType": "textField",
+					"value": "${var.pingfederateconnectorv2_property_base_url}",
+					"required": true
+				  },
+				  "returnToUrl": {
+					"displayName": "Application Return To URL",
+					"preferredControlType": "textField",
+					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application.",
+					"value": "${var.pingfederateconnectorv2_property_application_callback}"
+				  }
+				}
+			  })`},
 		},
 
 		"pingIdConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({
+				"properties": {
+				  "pingIdProperties": {
+					"displayName": "PingID properties file",
+					"preferredControlType": "secureTextArea",
+					"hashedVisibility": true,
+					"required": true,
+					"info": "Paste the contents of the PingID properties file into this field.",
+					"value": "${var.pingidconnector_property_properties_file}"
+				  },
+				  "returnToUrl": {
+					"displayName": "Application Return To URL",
+					"preferredControlType": "textField",
+					"info": "When using the embedded flow player widget and an IDP/Social Login connector, provide a callback URL to return back to the application."
+				  }
+				}
+			  })`},
 		},
 
 		"pingOneAuthorizeConnector": {
@@ -757,7 +1082,7 @@ var (
 		},
 
 		"samlIdpConnector": {
-			"saml": ExampleValue{Value: "jsonencode({})"},
+			"saml": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"seonConnector": {
@@ -840,15 +1165,15 @@ var (
 		},
 
 		"connectorSignicat": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"singpassLoginConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"slackConnector": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorSmarty": {
@@ -872,7 +1197,7 @@ var (
 		},
 
 		"connectorSpotify": {
-			"oauth2": ExampleValue{Value: "jsonencode({})"},
+			"oauth2": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorSpycloud": {
@@ -880,7 +1205,7 @@ var (
 		},
 
 		"connectorSvipe": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"tmtConnector": {
@@ -1075,7 +1400,7 @@ var (
 		},
 
 		"connectorValidsoft": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorVericlouds": {
@@ -1106,7 +1431,7 @@ var (
 		},
 
 		"connectorWinmagic": {
-			"openId": ExampleValue{Value: "jsonencode({})"},
+			"openId": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"wireWheelConnector": {
@@ -1117,11 +1442,11 @@ var (
 		},
 
 		"twitterIdpConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"yotiConnector": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 
 		"connectorZendesk": {
@@ -1205,7 +1530,7 @@ var (
 		},
 
 		"connectorTruid": {
-			"customAuth": ExampleValue{Value: "jsonencode({})"},
+			"customAuth": ExampleValue{Value: `jsonencode({})`},
 		},
 	}
 )
