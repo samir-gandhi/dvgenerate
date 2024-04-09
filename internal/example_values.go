@@ -971,7 +971,7 @@ var (
 					"hashedVisibility": true,
 					"required": true,
 					"info": "Paste the contents of the PingID properties file into this field.",
-					"value": "${var.pingidconnector_property_properties_file}"
+					"value": "${file(var.pingidconnector_property_pingid_properties_file_path)}"
 				  },
 				  "returnToUrl": {
 					"displayName": "Application Return To URL",
