@@ -80,12 +80,12 @@ var (
 
 		"authenticIdConnector": {
 			// "accountAccessKey":     ExampleValue{Value: "# property value"},
-			// "androidSDKLicenseKey": ExampleValue{Value: "# property value"},
+			"androidSDKLicenseKey": ExampleValue{Value: "var.authenticidconnector_property_android_sdk_license_key"},
 			// "apiUrl":               ExampleValue{Value: "# property value"},
 			"baseURL": ExampleValue{Value: "var.base_url"},
 			// "clientCertificate":    ExampleValue{Value: "# property value"},
 			// "clientKey":            ExampleValue{Value: "# property value"},
-			// "iOSSDKLicenseKey":     ExampleValue{Value: "# property value"},
+			"iOSSDKLicenseKey": ExampleValue{Value: "var.authenticidconnector_property_ios_sdk_license_key"},
 			// "passphrase":           ExampleValue{Value: "# property value"},
 			// "secretToken":          ExampleValue{Value: "# property value"},
 		},
