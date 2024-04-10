@@ -3,16 +3,17 @@
 package dvgenerate
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 	"path/filepath"
 	"sort"
 	"strings"
+	"text/template"
+	"unicode"
 
 	dv "github.com/samir-gandhi/davinci-client-go/davinci"
-
-	// "strings"
-	"text/template"
+	"github.com/samir-gandhi/dvgenerate/internal"
 )
 
 type connectorDocData struct {
@@ -26,9 +27,15 @@ type connectorDocPropertyData struct {
 	Type               *string
 	Description        *string
 	ConsoleDisplayName *string
+	Value              *string
 }
 
 func Generate() {
+	GenerateReferenceTemplate()
+	GenerateConnectorHCLExamples()
+}
+
+func GenerateReferenceTemplate() {
 
 	dir, err := filepath.Abs(filepath.Dir("."))
 	if err != nil {
@@ -38,22 +45,27 @@ func Generate() {
 	var file *os.File
 	packageDir := "./"
 	currentDir := "./"
-	fileName := currentDir + "docs/resources/connection.md"
+	fileName := currentDir + "templates/guides/connector-reference.md.tmpl"
 
 	if !strings.Contains(dir, "samir-gandhi/dvgenerate") {
-		file, err = os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+		file, err = os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY, 0644)
 		if err != nil {
 			panic(err)
 		}
+
+		defer file.Close()
+
 		packageDir = "./vendor/github.com/samir-gandhi/dvgenerate/"
 	} else {
 		file, err = os.Create(fileName)
 		if err != nil {
 			panic(err)
 		}
+
+		defer file.Close()
 	}
 
-	t, err := template.ParseFiles(packageDir + "cmd/generate/connector.tmpl")
+	t, err := template.ParseFiles(packageDir + "cmd/generate/connector_reference.tmpl")
 	if err != nil {
 		panic(err)
 	}
@@ -66,6 +78,51 @@ func Generate() {
 	err = t.Execute(file, conns)
 	if err != nil {
 		panic(err)
+	}
+}
+
+func GenerateConnectorHCLExamples() {
+
+	dir, err := filepath.Abs(filepath.Dir("."))
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("dir:", dir)
+
+	conns, err := readConnectors()
+	if err != nil {
+		panic(err)
+	}
+
+	for _, conn := range conns {
+
+		var file *os.File
+		packageDir := "./"
+		currentDir := "./"
+		fileName := currentDir + fmt.Sprintf("examples/connectors/%s.tf", conn.ConnectorId)
+
+		if !strings.Contains(dir, "samir-gandhi/dvgenerate") {
+			file, err = os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY, 0644)
+			if err != nil {
+				panic(err)
+			}
+			packageDir = "./vendor/github.com/samir-gandhi/dvgenerate/"
+		} else {
+			file, err = os.Create(fileName)
+			if err != nil {
+				panic(err)
+			}
+		}
+
+		t, err := template.ParseFiles(packageDir + "cmd/generate/connector.tmpl")
+		if err != nil {
+			panic(err)
+		}
+
+		err = t.Execute(file, conn)
+		if err != nil {
+			panic(err)
+		}
 	}
 }
 
@@ -84,6 +141,20 @@ func readConnectors() (connectionByName, error) {
 
 	for _, conn := range connectors {
 
+		var connectorId, connectorName string
+
+		if v := conn.ConnectorID; v != nil {
+			connectorId = *v
+		} else {
+			connectorId = "No value"
+		}
+
+		if v := conn.Name; v != nil {
+			connectorName = *v
+		} else {
+			connectorName = "No name"
+		}
+
 		connectorProperties := make(connectionPropertyByName, 0)
 		if acv := conn.AccountConfigView; acv != nil {
 			for key, prop := range conn.Properties {
@@ -99,32 +170,48 @@ func readConnectors() (connectionByName, error) {
 							description = &descriptionTemp
 						}
 
-						connectorProperties = append(connectorProperties, connectorDocPropertyData{
+						var propertyType string
+						if prop.Type != nil {
+							switch *prop.Type {
+							case "string", "boolean", "number", "":
+								propertyType = *prop.Type
+							default:
+								propertyType = "json"
+							}
+						} else {
+							propertyType = "string"
+						}
+
+						connectorProperty := connectorDocPropertyData{
 							Name:               key,
-							Type:               prop.Type,
+							Type:               &propertyType,
 							Description:        description,
 							ConsoleDisplayName: prop.DisplayName,
-						})
+						}
+
+						exampleFound := false
+						if v, ok := internal.ExampleValues[connectorId][key]; ok {
+							connectorProperty.Value = &v.Value
+
+							if v.OverridingType != nil {
+								connectorProperty.Type = v.OverridingType
+							}
+
+							exampleFound = true
+						}
+
+						if !exampleFound {
+							defaultValue := fmt.Sprintf("var.%s_property_%s", strings.ToLower(connectorId), camelToSnake(key))
+							connectorProperty.Value = &defaultValue
+						}
+
+						connectorProperties = append(connectorProperties, connectorProperty)
 					}
 				}
 			}
 		}
 
 		sort.Sort(connectorProperties)
-
-		var connectorId, connectorName string
-
-		if v := conn.ConnectorID; v != nil {
-			connectorId = *v
-		} else {
-			connectorId = "No value"
-		}
-
-		if v := conn.Name; v != nil {
-			connectorName = *v
-		} else {
-			connectorName = "No name"
-		}
 
 		connectorList = append(connectorList, connectorDocData{
 			ConnectorName: connectorName,
@@ -187,3 +274,22 @@ func (a connectionByName) Less(i, j int) bool {
 	return fmt.Sprintf("%s%s", a[i].ConnectorName, a[i].ConnectorId) < fmt.Sprintf("%s%s", a[j].ConnectorName, a[j].ConnectorId)
 }
 func (a connectionByName) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
+
+func camelToSnake(camel string) string {
+	// A buffer to build the output string
+	var buf bytes.Buffer
+
+	// Loop through each rune in the string
+	for i, r := range camel {
+		// If the rune is an uppercase letter and it's not the first character,
+		// write an underscore to the buffer
+		if unicode.IsUpper(r) && i > 0 {
+			buf.WriteRune('_')
+		}
+		// Write the lowercase version of the current rune to the buffer
+		buf.WriteRune(unicode.ToLower(r))
+	}
+
+	// Return the contents of the buffer as a string
+	return buf.String()
+}
